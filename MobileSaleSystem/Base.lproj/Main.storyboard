@@ -18,9 +18,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAr-1w-9JT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-185" y="229"/>
+            <point key="canvasLocation" x="-2004" y="-1147"/>
         </scene>
-        <!--View Controller-->
+        <!--移动销售管理系统-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -41,6 +41,9 @@
                                 <state key="normal" backgroundImage="1.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Cdn-fX-o41" kind="push" id="JVb-LX-EFP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Inm-Rz-1yH">
                                 <rect key="frame" x="130" y="182" width="60" height="60"/>
@@ -51,6 +54,9 @@
                                 <state key="normal" backgroundImage="2.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="nog-OE-d1W" kind="push" id="Itn-46-aPN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXY-ai-Sda">
                                 <rect key="frame" x="235" y="291" width="60" height="60"/>
@@ -61,6 +67,9 @@
                                 <state key="normal" backgroundImage="6.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6h1-Kl-lou" kind="push" id="gan-kg-Y9C"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbA-Q2-whJ">
                                 <rect key="frame" x="29" y="291" width="60" height="60"/>
@@ -71,6 +80,9 @@
                                 <state key="normal" backgroundImage="4.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="sSb-HC-ebV" kind="push" id="Ubw-AE-afh"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0.png" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-jf-kZg">
                                 <rect key="frame" x="29" y="74" width="60" height="60"/>
@@ -142,6 +154,9 @@
                                 <state key="normal" backgroundImage="5.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="l9G-lX-NYG" kind="push" id="11U-Ec-Waj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEc-h0-8Od">
                                 <rect key="frame" x="235" y="182" width="60" height="60"/>
@@ -152,6 +167,9 @@
                                 <state key="normal" backgroundImage="3.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zgB-rO-Paw" kind="push" id="8Yh-4u-6dS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到管理" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbv-v2-UCv">
                                 <rect key="frame" x="227" y="364" width="77" height="21"/>
@@ -171,6 +189,9 @@
                                 <state key="normal" backgroundImage="8.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0gR-1N-riq" kind="push" id="Svx-Dg-RQv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETW-gk-Jcd">
                                 <rect key="frame" x="29" y="401" width="60" height="60"/>
@@ -181,6 +202,9 @@
                                 <state key="normal" backgroundImage="7.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="7JL-r9-nJo" kind="push" id="UAw-6n-nFn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-c6-YB2">
                                 <rect key="frame" x="109" y="74" width="81" height="21"/>
@@ -276,11 +300,176 @@
                             <constraint firstItem="ohV-ND-hla" firstAttribute="centerX" secondItem="Inm-Rz-1yH" secondAttribute="centerX" id="zzL-iU-nQt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KmI-3a-vhx"/>
+                    <navigationItem key="navigationItem" title="移动销售管理系统" id="KmI-3a-vhx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="222"/>
+            <point key="canvasLocation" x="-1445" y="-1147"/>
+        </scene>
+        <!--客户管理-->
+        <scene sceneID="79v-Lp-XN4">
+            <objects>
+                <viewController id="Cdn-fX-o41" customClass="ClientManageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="itf-4M-lFI"/>
+                        <viewControllerLayoutGuide type="bottom" id="wD1-Ai-uB1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mim-Ig-W12">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XWU-ku-AHM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Cdn-fX-o41" id="q9Q-Ye-jgq"/>
+                                    <outlet property="delegate" destination="Cdn-fX-o41" id="9AJ-zM-b27"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="客户管理" id="CDh-M5-HPb"/>
+                    <connections>
+                        <outlet property="tableView" destination="XWU-ku-AHM" id="gI3-su-QYX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6j-se-9cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="-2867"/>
+        </scene>
+        <!--经费申请-->
+        <scene sceneID="kFx-fk-gZk">
+            <objects>
+                <viewController id="nog-OE-d1W" customClass="FundsApplyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yUj-ld-Vwh"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Iz-sy-mY2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cyd-E8-tzU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="经费申请" id="W8N-AT-EXi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pop-ZE-3sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594" y="-2357"/>
+        </scene>
+        <!--售后服务-->
+        <scene sceneID="Wvu-Fi-w2p">
+            <objects>
+                <viewController id="zgB-rO-Paw" customClass="AfterSaleServiceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d44-vq-7pO"/>
+                        <viewControllerLayoutGuide type="bottom" id="vh4-I6-gHx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Kq-lB-d76">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="售后服务" id="kUL-SV-D1l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHy-5d-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-736" y="-1622"/>
+        </scene>
+        <!--活动计划-->
+        <scene sceneID="vW4-kZ-KT3">
+            <objects>
+                <viewController id="sSb-HC-ebV" customClass="ActivityPlanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C1K-g8-OAe"/>
+                        <viewControllerLayoutGuide type="bottom" id="wKZ-3f-TF8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f3f-eX-nAX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="活动计划" id="AmV-H5-Tsr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZY4-22-zkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-743" y="-1445"/>
+        </scene>
+        <!--签到管理-->
+        <scene sceneID="sAG-Ng-S5E">
+            <objects>
+                <viewController id="6h1-Kl-lou" customClass="SignInManageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JNS-XN-Qet"/>
+                        <viewControllerLayoutGuide type="bottom" id="M5M-wr-bxQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bte-w0-2m3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="签到管理" id="HaG-hc-unf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbP-if-jrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434" y="-484"/>
+        </scene>
+        <!--路线规划-->
+        <scene sceneID="7sx-ZK-gOT">
+            <objects>
+                <viewController id="7JL-r9-nJo" customClass="RoutePlanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="huL-kq-FI2"/>
+                        <viewControllerLayoutGuide type="bottom" id="gjH-Bc-cE5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JUT-JZ-dvf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="路线规划" id="9uF-oY-tDb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IFx-Uc-hpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-774" y="-245"/>
+        </scene>
+        <!--我的信息-->
+        <scene sceneID="u2E-fs-zdy">
+            <objects>
+                <viewController id="0gR-1N-riq" customClass="MyInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z5h-4A-PA3"/>
+                        <viewControllerLayoutGuide type="bottom" id="arO-Y4-Ttw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hMi-4L-F0q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的信息" id="Fja-du-q08"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLd-im-Ztg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1160" y="-170"/>
+        </scene>
+        <!--记录管理-->
+        <scene sceneID="mBy-t5-CI2">
+            <objects>
+                <viewController id="l9G-lX-NYG" customClass="RecordManageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3XB-H9-Uyi"/>
+                        <viewControllerLayoutGuide type="bottom" id="gD3-f5-l9U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZA5-dB-6gG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="记录管理" id="m4W-Ja-ohq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqs-xh-1xY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400" y="-889"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8E6DDA01A4C62CF00B2DA07 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */; };
 		B8F64C1E1A418E5200C8EAA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C1D1A418E5200C8EAA7 /* main.m */; };
 		B8F64C211A418E5200C8EAA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C201A418E5200C8EAA7 /* AppDelegate.m */; };
 		B8F64C241A418E5200C8EAA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C231A418E5200C8EAA7 /* ViewController.m */; };
@@ -25,6 +26,13 @@
 		B8F64C561A4192F600C8EAA7 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C551A4192F600C8EAA7 /* 8.jpg */; };
 		B8F64C5A1A41939C00C8EAA7 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C591A41939C00C8EAA7 /* 0.png */; };
 		B8F64C5C1A41942C00C8EAA7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C5B1A41942C00C8EAA7 /* 3.jpg */; };
+		B8F9C99D1A4C5EA00017A97A /* ClientManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C99C1A4C5EA00017A97A /* ClientManageViewController.m */; };
+		B8F9C9A01A4C5EC80017A97A /* FundsApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C99F1A4C5EC80017A97A /* FundsApplyViewController.m */; };
+		B8F9C9A31A4C5EE40017A97A /* AfterSaleServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9A21A4C5EE40017A97A /* AfterSaleServiceViewController.m */; };
+		B8F9C9A61A4C5EF50017A97A /* ActivityPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9A51A4C5EF50017A97A /* ActivityPlanViewController.m */; };
+		B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */; };
+		B8F9C9AC1A4C5F210017A97A /* SignInManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */; };
+		B8F9C9AF1A4C5F3A0017A97A /* RoutePlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
+		B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
 		B8F64C181A418E5200C8EAA7 /* MobileSaleSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSaleSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F64C1C1A418E5200C8EAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8F64C1D1A418E5200C8EAA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +73,20 @@
 		B8F64C551A4192F600C8EAA7 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		B8F64C591A41939C00C8EAA7 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		B8F64C5B1A41942C00C8EAA7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		B8F9C99B1A4C5EA00017A97A /* ClientManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientManageViewController.h; sourceTree = "<group>"; };
+		B8F9C99C1A4C5EA00017A97A /* ClientManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientManageViewController.m; sourceTree = "<group>"; };
+		B8F9C99E1A4C5EC80017A97A /* FundsApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundsApplyViewController.h; sourceTree = "<group>"; };
+		B8F9C99F1A4C5EC80017A97A /* FundsApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundsApplyViewController.m; sourceTree = "<group>"; };
+		B8F9C9A11A4C5EE40017A97A /* AfterSaleServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AfterSaleServiceViewController.h; sourceTree = "<group>"; };
+		B8F9C9A21A4C5EE40017A97A /* AfterSaleServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AfterSaleServiceViewController.m; sourceTree = "<group>"; };
+		B8F9C9A41A4C5EF50017A97A /* ActivityPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityPlanViewController.h; sourceTree = "<group>"; };
+		B8F9C9A51A4C5EF50017A97A /* ActivityPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityPlanViewController.m; sourceTree = "<group>"; };
+		B8F9C9A71A4C5F060017A97A /* RecordManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordManageViewController.h; sourceTree = "<group>"; };
+		B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordManageViewController.m; sourceTree = "<group>"; };
+		B8F9C9AA1A4C5F210017A97A /* SignInManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInManageViewController.h; sourceTree = "<group>"; };
+		B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInManageViewController.m; sourceTree = "<group>"; };
+		B8F9C9AD1A4C5F3A0017A97A /* RoutePlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePlanViewController.h; sourceTree = "<group>"; };
+		B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePlanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +135,22 @@
 				B8F64C231A418E5200C8EAA7 /* ViewController.m */,
 				B8F64C411A418ED800C8EAA7 /* HeadView.h */,
 				B8F64C421A418ED800C8EAA7 /* HeadView.m */,
+				B8F9C99B1A4C5EA00017A97A /* ClientManageViewController.h */,
+				B8F9C99C1A4C5EA00017A97A /* ClientManageViewController.m */,
+				B8F9C99E1A4C5EC80017A97A /* FundsApplyViewController.h */,
+				B8F9C99F1A4C5EC80017A97A /* FundsApplyViewController.m */,
+				B8F9C9A11A4C5EE40017A97A /* AfterSaleServiceViewController.h */,
+				B8F9C9A21A4C5EE40017A97A /* AfterSaleServiceViewController.m */,
+				B8F9C9A41A4C5EF50017A97A /* ActivityPlanViewController.h */,
+				B8F9C9A51A4C5EF50017A97A /* ActivityPlanViewController.m */,
+				B8F9C9A71A4C5F060017A97A /* RecordManageViewController.h */,
+				B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */,
+				B8F9C9AA1A4C5F210017A97A /* SignInManageViewController.h */,
+				B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */,
+				B8F9C9AD1A4C5F3A0017A97A /* RoutePlanViewController.h */,
+				B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */,
+				B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */,
+				B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */,
 				B8F64C441A418EFB00C8EAA7 /* HeadView.xib */,
 				B8F64C251A418E5200C8EAA7 /* Main.storyboard */,
 				B8F64C281A418E5200C8EAA7 /* Images.xcassets */,
@@ -272,10 +312,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */,
+				B8F9C9A01A4C5EC80017A97A /* FundsApplyViewController.m in Sources */,
 				B8F64C241A418E5200C8EAA7 /* ViewController.m in Sources */,
 				B8F64C211A418E5200C8EAA7 /* AppDelegate.m in Sources */,
+				B8F9C9A31A4C5EE40017A97A /* AfterSaleServiceViewController.m in Sources */,
+				B8F9C9AC1A4C5F210017A97A /* SignInManageViewController.m in Sources */,
 				B8F64C431A418ED800C8EAA7 /* HeadView.m in Sources */,
+				B8F9C99D1A4C5EA00017A97A /* ClientManageViewController.m in Sources */,
+				B8F9C9A61A4C5EF50017A97A /* ActivityPlanViewController.m in Sources */,
 				B8F64C1E1A418E5200C8EAA7 /* main.m in Sources */,
+				B8E6DDA01A4C62CF00B2DA07 /* MyInfoViewController.m in Sources */,
+				B8F9C9AF1A4C5F3A0017A97A /* RoutePlanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +514,7 @@
 				B8F64C3D1A418E5200C8EAA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8F64C3E1A418E5200C8EAA7 /* Build configuration list for PBXNativeTarget "MobileSaleSystemTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +523,7 @@
 				B8F64C401A418E5200C8EAA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
