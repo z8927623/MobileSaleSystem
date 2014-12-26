@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B87C8F641A4D52FE007F27B4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B87C8F631A4D52FE007F27B4 /* MasterViewController.m */; };
+		B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */; };
+		B89F27BF1A4D175700BAF523 /* EditClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27BE1A4D175700BAF523 /* EditClientViewController.m */; };
+		B89F27C21A4D341E00BAF523 /* NewClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27C11A4D341E00BAF523 /* NewClientViewController.m */; };
+		B89F27C51A4D4D8D00BAF523 /* ActivityPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27C41A4D4D8D00BAF523 /* ActivityPlanCell.m */; };
 		B8E6DDA01A4C62CF00B2DA07 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */; };
 		B8F64C1E1A418E5200C8EAA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C1D1A418E5200C8EAA7 /* main.m */; };
 		B8F64C211A418E5200C8EAA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C201A418E5200C8EAA7 /* AppDelegate.m */; };
-		B8F64C241A418E5200C8EAA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C231A418E5200C8EAA7 /* ViewController.m */; };
 		B8F64C271A418E5200C8EAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C251A418E5200C8EAA7 /* Main.storyboard */; };
 		B8F64C291A418E5200C8EAA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C281A418E5200C8EAA7 /* Images.xcassets */; };
 		B8F64C2C1A418E5200C8EAA7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C2A1A418E5200C8EAA7 /* LaunchScreen.xib */; };
 		B8F64C381A418E5200C8EAA7 /* MobileSaleSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C371A418E5200C8EAA7 /* MobileSaleSystemTests.m */; };
-		B8F64C431A418ED800C8EAA7 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F64C421A418ED800C8EAA7 /* HeadView.m */; };
-		B8F64C451A418EFB00C8EAA7 /* HeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C441A418EFB00C8EAA7 /* HeadView.xib */; };
 		B8F64C491A4191FB00C8EAA7 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C471A4191FB00C8EAA7 /* 2.jpg */; };
 		B8F64C4A1A4191FB00C8EAA7 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C481A4191FB00C8EAA7 /* 1.jpg */; };
 		B8F64C4C1A41921700C8EAA7 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8F64C4B1A41921700C8EAA7 /* 7.jpg */; };
@@ -46,6 +48,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B87C8F621A4D52FE007F27B4 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		B87C8F631A4D52FE007F27B4 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B89F27B71A4D0F3800BAF523 /* ClientDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientDetailViewController.h; sourceTree = "<group>"; };
+		B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientDetailViewController.m; sourceTree = "<group>"; };
+		B89F27BD1A4D175700BAF523 /* EditClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditClientViewController.h; sourceTree = "<group>"; };
+		B89F27BE1A4D175700BAF523 /* EditClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditClientViewController.m; sourceTree = "<group>"; };
+		B89F27C01A4D341E00BAF523 /* NewClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewClientViewController.h; sourceTree = "<group>"; };
+		B89F27C11A4D341E00BAF523 /* NewClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewClientViewController.m; sourceTree = "<group>"; };
+		B89F27C31A4D4D8D00BAF523 /* ActivityPlanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityPlanCell.h; sourceTree = "<group>"; };
+		B89F27C41A4D4D8D00BAF523 /* ActivityPlanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityPlanCell.m; sourceTree = "<group>"; };
 		B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
 		B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
 		B8F64C181A418E5200C8EAA7 /* MobileSaleSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileSaleSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,17 +65,12 @@
 		B8F64C1D1A418E5200C8EAA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8F64C1F1A418E5200C8EAA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8F64C201A418E5200C8EAA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B8F64C221A418E5200C8EAA7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B8F64C231A418E5200C8EAA7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B8F64C261A418E5200C8EAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8F64C281A418E5200C8EAA7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B8F64C2B1A418E5200C8EAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B8F64C311A418E5200C8EAA7 /* MobileSaleSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileSaleSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F64C361A418E5200C8EAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8F64C371A418E5200C8EAA7 /* MobileSaleSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileSaleSystemTests.m; sourceTree = "<group>"; };
-		B8F64C411A418ED800C8EAA7 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
-		B8F64C421A418ED800C8EAA7 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
-		B8F64C441A418EFB00C8EAA7 /* HeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadView.xib; sourceTree = "<group>"; };
 		B8F64C471A4191FB00C8EAA7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		B8F64C481A4191FB00C8EAA7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		B8F64C4B1A41921700C8EAA7 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
@@ -131,12 +138,16 @@
 				B8F64C461A4191F000C8EAA7 /* Resources */,
 				B8F64C1F1A418E5200C8EAA7 /* AppDelegate.h */,
 				B8F64C201A418E5200C8EAA7 /* AppDelegate.m */,
-				B8F64C221A418E5200C8EAA7 /* ViewController.h */,
-				B8F64C231A418E5200C8EAA7 /* ViewController.m */,
-				B8F64C411A418ED800C8EAA7 /* HeadView.h */,
-				B8F64C421A418ED800C8EAA7 /* HeadView.m */,
+				B87C8F621A4D52FE007F27B4 /* MasterViewController.h */,
+				B87C8F631A4D52FE007F27B4 /* MasterViewController.m */,
 				B8F9C99B1A4C5EA00017A97A /* ClientManageViewController.h */,
 				B8F9C99C1A4C5EA00017A97A /* ClientManageViewController.m */,
+				B89F27B71A4D0F3800BAF523 /* ClientDetailViewController.h */,
+				B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */,
+				B89F27BD1A4D175700BAF523 /* EditClientViewController.h */,
+				B89F27BE1A4D175700BAF523 /* EditClientViewController.m */,
+				B89F27C01A4D341E00BAF523 /* NewClientViewController.h */,
+				B89F27C11A4D341E00BAF523 /* NewClientViewController.m */,
 				B8F9C99E1A4C5EC80017A97A /* FundsApplyViewController.h */,
 				B8F9C99F1A4C5EC80017A97A /* FundsApplyViewController.m */,
 				B8F9C9A11A4C5EE40017A97A /* AfterSaleServiceViewController.h */,
@@ -151,7 +162,8 @@
 				B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */,
 				B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */,
 				B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */,
-				B8F64C441A418EFB00C8EAA7 /* HeadView.xib */,
+				B89F27C31A4D4D8D00BAF523 /* ActivityPlanCell.h */,
+				B89F27C41A4D4D8D00BAF523 /* ActivityPlanCell.m */,
 				B8F64C251A418E5200C8EAA7 /* Main.storyboard */,
 				B8F64C281A418E5200C8EAA7 /* Images.xcassets */,
 				B8F64C2A1A418E5200C8EAA7 /* LaunchScreen.xib */,
@@ -290,7 +302,6 @@
 				B8F64C491A4191FB00C8EAA7 /* 2.jpg in Resources */,
 				B8F64C4C1A41921700C8EAA7 /* 7.jpg in Resources */,
 				B8F64C4A1A4191FB00C8EAA7 /* 1.jpg in Resources */,
-				B8F64C451A418EFB00C8EAA7 /* HeadView.xib in Resources */,
 				B8F64C501A41922D00C8EAA7 /* 5.jpg in Resources */,
 				B8F64C5A1A41939C00C8EAA7 /* 0.png in Resources */,
 				B8F64C4E1A41921B00C8EAA7 /* 6.png in Resources */,
@@ -312,15 +323,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B89F27C51A4D4D8D00BAF523 /* ActivityPlanCell.m in Sources */,
 				B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */,
 				B8F9C9A01A4C5EC80017A97A /* FundsApplyViewController.m in Sources */,
-				B8F64C241A418E5200C8EAA7 /* ViewController.m in Sources */,
 				B8F64C211A418E5200C8EAA7 /* AppDelegate.m in Sources */,
 				B8F9C9A31A4C5EE40017A97A /* AfterSaleServiceViewController.m in Sources */,
 				B8F9C9AC1A4C5F210017A97A /* SignInManageViewController.m in Sources */,
-				B8F64C431A418ED800C8EAA7 /* HeadView.m in Sources */,
 				B8F9C99D1A4C5EA00017A97A /* ClientManageViewController.m in Sources */,
 				B8F9C9A61A4C5EF50017A97A /* ActivityPlanViewController.m in Sources */,
+				B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */,
+				B89F27C21A4D341E00BAF523 /* NewClientViewController.m in Sources */,
+				B89F27BF1A4D175700BAF523 /* EditClientViewController.m in Sources */,
+				B87C8F641A4D52FE007F27B4 /* MasterViewController.m in Sources */,
 				B8F64C1E1A418E5200C8EAA7 /* main.m in Sources */,
 				B8E6DDA01A4C62CF00B2DA07 /* MyInfoViewController.m in Sources */,
 				B8F9C9AF1A4C5F3A0017A97A /* RoutePlanViewController.m in Sources */,

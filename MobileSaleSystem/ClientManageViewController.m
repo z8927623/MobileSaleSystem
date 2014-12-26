@@ -8,9 +8,11 @@
 
 #import "ClientManageViewController.h"
 
-#define Identifier @"CellIdentifer"
+#define Identifier @"ClientManageCellIdentifer"
 
 @interface ClientManageViewController ()
+
+@property (nonatomic, strong) NSMutableArray *indexArr;
 
 @end
 
@@ -20,12 +22,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.clientArr =[NSMutableArray arrayWithObjects:@"张三", @"李四", @"老五", @"小张", @"小杨", @"周杰伦", @"王力宏", @"林俊杰", @"张学友", @"刘德华", @"小赵", @"小莉", @"姚明", nil];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onBtnAdd:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
     
+    self.clientArr =[NSMutableArray arrayWithObjects:@"张三", @"李四", @"老五", @"小张", @"小杨", @"周杰伦", @"王力宏", @"林俊杰", @"张学友", @"刘德华", @"小赵", @"小莉", @"姚明", nil];
+    self.indexArr = [NSMutableArray arrayWithObjects:@"a", @"b", @"c", @"d", nil];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:Identifier];
 }
 
+- (void)onBtnAdd:(id)sender
+{
+    [self performSegueWithIdentifier:@"toAddNewClient" sender:nil];
+}
 
 #pragma mark - UITableViewDataSource and Delegate
 
@@ -42,6 +51,15 @@
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"toDetail" sender:selectedCell];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
@@ -49,23 +67,28 @@
 
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleInsert;
+    return UITableViewCellEditingStyleDelete;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (editingStyle ==UITableViewCellEditingStyleDelete) {
-        
+        [self.clientArr removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
-/*
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+//{
+//    return self.indexArr;
+//}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UITableViewCell *cell = (UITableViewCell *)sender;
 }
-*/
+
 
 @end

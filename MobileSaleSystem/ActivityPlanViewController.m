@@ -7,23 +7,15 @@
 //
 
 #import "ActivityPlanViewController.h"
+#import "ActivityPlanCell.h"
+
+#define Identifier @"ActivityPlanCellIdentifer"
 
 @interface ActivityPlanViewController ()
 
 @end
 
 @implementation ActivityPlanViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    
-    return self;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,14 +30,33 @@
     
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UITableViewDataSource and Delegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ActivityPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+    cell.timeLbl.text = @"2014.12.26";
+    cell.detailLbl.text = @"i简单；十几分i；骚减肥；熬倒计时v哦朋；撒酒疯静安寺；放假啊是【发技术总监";
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+//    [self performSegueWithIdentifier:@"toDetail" sender:selectedCell];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end
