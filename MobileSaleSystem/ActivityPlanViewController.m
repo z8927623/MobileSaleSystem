@@ -8,6 +8,9 @@
 
 #import "ActivityPlanViewController.h"
 #import "ActivityPlanCell.h"
+#import "ActivityDetailViewController.h"
+
+#define Identifier @"ActivityPlanCellIdentifer"
 
 @interface ActivityPlanViewController ()
 
@@ -19,6 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.needsBackItem = YES;
         self.modelArr = [NSMutableArray array];
     }
     return self;
@@ -28,6 +32,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.needsBackItem = YES;
         self.modelArr = [NSMutableArray array];
     }
     return self;
@@ -40,15 +45,18 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onBtnAdd:)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    NSArray *array = [NSArray arrayWithObjects:@"i简单；十几分i；骚减肥；熬倒计时v哦朋；撒酒疯静安寺；放假啊是【发技术总监jjdsfijadifoyoiwyoweoayr7yohkfjskf  oi就；；放假阿迪；非", @"ijdsojf;osjf",
+    NSArray *array = [NSArray arrayWithObjects:@"i简单；十几分i；骚减肥；熬倒计时v哦朋；撒酒疯静安寺；放假啊是【发技术总监jjdsfijadifoyoiwyoweoayr7yohkfjskf",
                       @"即将二分i傲娇",
                       @"lfijfjepafj",
                       @"ijd;oaf[I0[Q",
-                      @"AJJAJAJJWD",
+                      @"down vote lt for a given SDK or deployment target. For exa",
                       @"SEI放假哦啊见附件地方【安家费【ap9isfd[a9啊【死放大【啊大宋见附件地；v静安寺大劫案【哦几放大放假啊【非jsidfjasjidfpaisdfjwp8ruwqpfj",
                       @"dsfasdofoasfasdfdas",
+                      @"【春兰杯古力屠龙胜韩国金志锡 中国提前夺冠】http://t.cn/RZzydsc 第十届春兰杯半决赛刚刚结束一场，不久前十番棋失利的古力以围棋中最为酣畅淋漓的屠龙方式击败韩国金志锡，中国包揽冠亚军。韩国二号棋手金志锡近期首夺三星杯以及进入LG杯决赛，期间击败中国多位年轻世界冠军，终于倒在了古力面前。"
+                      @""
                       @"i建瓯就打算激动啥金佛就是IE剪发",
-                      @"dfj;asjdf",
+                      @"尼泊尔和孟加拉国都是中国传统友好邻邦。明年是中尼建交60周年，也是中孟建交40周年。中方期待通过此访推动落实中尼、中孟两国领导人重要共识，规划明年建交纪念活动，拓展双方在经贸、互联互通、人文等领域合作，推进中尼、中孟关系进一步发展。问美韩日三方将签订一项防卫情报备忘录，共享有关朝鲜核武器和导弹项目的机密信息。中方对此有何评论？\
+                      答：我们注意到有关报道。当前朝鲜半岛形势总体缓和，但这一局面仍较脆弱。希望有关各方多做有利于促进对话和互信、有利于维护半岛和本地区和平稳定大局的事，而不是相反。这符合有关各方的共同利益",
                       @"呵呵",
                       nil];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -64,12 +72,12 @@
         [self.modelArr addObject:model];
     }
     
-//    [self.tableView registerNib:[UINib nibWithNibName:@"ActivityPlanCell.xib" bundle:nil] forCellReuseIdentifier:Identifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ActivityPlanCell" bundle:nil] forCellReuseIdentifier:Identifier];
 }
 
 - (void)onBtnAdd:(id)sender
 {
-    
+    [self performSegueWithIdentifier:@"toAddNewPlan" sender:nil];
 }
 
 #pragma mark - UITableViewDataSource and Delegate
@@ -81,17 +89,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *Identifier = @"ActivityPlanCellIdentifer";
-    
-    ActivityPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
-    if (!cell) {
-//        cell = [[ActivityPlanCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"ActivityPlanCell" owner:self options:nil] lastObject];
-    }
+    ActivityPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
     
     PlanModel *model = self.modelArr[indexPath.row];
-    cell.timeLbl.text = model.time;
-    cell.detailLbl.text = model.detail;
+    [cell setModel:model tableView:tableView];
 
     return cell;
 }
@@ -105,10 +106,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-//    [self performSegueWithIdentifier:@"toDetail" sender:selectedCell];
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"toDetail" sender:selectedCell];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.modelArr removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"toDetail"]) {
+        ActivityPlanCell *cell = (ActivityPlanCell *)sender;
+        ActivityDetailViewController *activityDetailVC = (ActivityDetailViewController *)segue.destinationViewController;
+        activityDetailVC.model = cell.model;
+    }
 }
 
 @end

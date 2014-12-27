@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface ClientManageViewController : UIViewController 
+@interface ClientManageViewController : CommonViewController 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

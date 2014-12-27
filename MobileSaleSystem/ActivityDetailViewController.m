@@ -1,18 +1,20 @@
 //
-//  RecordManageViewController.m
+//  ActivityDetailViewController.m
 //  MobileSaleSystem
 //
-//  Created by Wild Yaoyao on 14/12/25.
+//  Created by Wild Yaoyao on 14/12/27.
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import "RecordManageViewController.h"
+#import "ActivityDetailViewController.h"
 
-@interface RecordManageViewController ()
+@interface ActivityDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
-@implementation RecordManageViewController
+@implementation ActivityDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,11 +37,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(onBtnSave:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+    self.textView.text = self.model.detail;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)onBtnSave:(id)sender
+{
+    
 }
 
 /*

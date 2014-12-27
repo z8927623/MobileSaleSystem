@@ -26,9 +26,9 @@
     self.dateLbl.text = [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated
+{
+//    [self performSegueWithIdentifier:@"toLogin" sender:nil];
 }
 
 /*

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface NewClientViewController : UIViewController
+@interface NewClientViewController : CommonViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;

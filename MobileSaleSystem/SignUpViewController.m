@@ -1,40 +1,30 @@
 //
-//  RecordManageViewController.m
+//  SignUpViewController.m
 //  MobileSaleSystem
 //
-//  Created by Wild Yaoyao on 14/12/25.
+//  Created by Wild Yaoyao on 14/12/27.
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import "RecordManageViewController.h"
+#import "SignUpViewController.h"
 
-@interface RecordManageViewController ()
+@interface SignUpViewController ()
 
 @end
 
-@implementation RecordManageViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.needsBackItem = YES;
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.needsBackItem = YES;
-    }
-    return self;
-}
+@implementation SignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onBtnCancel:)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+}
+
+- (void)onBtnCancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

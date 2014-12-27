@@ -8,30 +8,73 @@
 
 #import "ActivityPlanCell.h"
 
+#define SPACE 20
+
 @implementation ActivityPlanCell
 
 - (void)awakeFromNib {
     // Initialization code
-    
-//    self.translatesAutoresizingMaskIntoConstraints = NO;
-//    self.superview.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    self.detailLbl.backgroundColor = [UIColor yellowColor];
+
+//    self.timeLbl.backgroundColor = [UIColor cyanColor];
+//    self.detailLbl.backgroundColor = [UIColor yellowColor];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setModel:(PlanModel *)model tableView:(UITableView *)tableView
+{
+    if (_model != model) {
+        _model = model;
+        
+        self.timeLbl.text = _model.time;
+        self.detailLbl.text = _model.detail;
+        
+        // 调整大小
+        CGRect frame = self.timeLbl.frame;
+        CGFloat left = self.creator.frame.origin.x+self.creator.frame.size.width+SPACE;
+        CGFloat right = tableView.frame.size.width-20;
+        frame.origin.x = left;
+        frame.size.width = right-left;
+        self.timeLbl.frame = frame;
+        
+        frame = self.detailLbl.frame;
+        frame.size.width = tableView.frame.size.width-40;
+        self.detailLbl.frame = frame;
+    }
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    CGSize size = [self.detailLbl.text sizeWithFont:self.detailLbl.font
-                             constrainedToSize:CGSizeMake(self.frame.size.width-40, MAXFLOAT)
-                                 lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize size;
+    
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.0) {
+        
+        CGRect textRect = [self.detailLbl.text boundingRectWithSize:CGSizeMake(self.frame.size.width-40, MAXFLOAT)
+                                                            options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                                         attributes:@{NSFontAttributeName:self.detailLbl.font}
+                                                            context:nil];
+        size = textRect.size;
+    } else {
+        size = [self.detailLbl.text sizeWithFont:self.detailLbl.font
+                                 constrainedToSize:CGSizeMake(self.frame.size.width-40, MAXFLOAT)
+                                     lineBreakMode:NSLineBreakByWordWrapping];
+        
+    }
+
+//#if __IPHONE_OS_VERSION_MAX_ALLOWED  >= 70000
+//        
+//        CGRect textRect = [self.detailLbl.text boundingRectWithSize:CGSizeMake(self.frame.size.width-40, MAXFLOAT)
+//                                                            options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+//                                                         attributes:@{NSFontAttributeName:self.detailLbl.font}
+//                                                            context:nil];
+//        size = textRect.size;
+//#else
+//        size = [self.detailLbl.text sizeWithFont:self.detailLbl.font
+//                               constrainedToSize:CGSizeMake(self.frame.size.width-40, MAXFLOAT)
+//                                   lineBreakMode:NSLineBreakByWordWrapping];
+//        
+//#endif
+
     CGRect frame = self.detailLbl.frame;
     frame.size.height = size.height;
     self.detailLbl.frame = frame;
@@ -46,10 +89,21 @@
     detailLbl.numberOfLines = 0;
     detailLbl.text = detail;
     
-    CGSize size = [detailLbl.text sizeWithFont:detailLbl.font
-                             constrainedToSize:CGSizeMake(width, MAXFLOAT)
-                                 lineBreakMode:NSLineBreakByWordWrapping];
-//    detailLbl.text boundingRectWithSize:CGSizeMake(detailLbl.frame.size.width, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{  } context:<#(NSStringDrawingContext *)#>
+    CGSize size;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.0) {
+        
+        CGRect textRect = [detailLbl.text boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
+                                                            options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                                         attributes:@{NSFontAttributeName:detailLbl.font}
+                                                            context:nil];
+        size = textRect.size;
+    } else {
+        size = [detailLbl.text sizeWithFont:detailLbl.font
+                           constrainedToSize:CGSizeMake(width, MAXFLOAT)
+                               lineBreakMode:NSLineBreakByWordWrapping];
+        
+    }
+    
     
     totalHeight += size.height+10;
     

@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) PlanModel *model;
 
+- (void)setModel:(PlanModel *)model tableView:(UITableView *)tableView;
+
 + (CGFloat)getCellHeight:(NSString *)detail width:(CGFloat)width;
 
 @end

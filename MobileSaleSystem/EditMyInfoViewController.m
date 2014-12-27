@@ -1,27 +1,18 @@
 //
-//  RecordManageViewController.m
+//  EditMyInfoViewController.m
 //  MobileSaleSystem
 //
-//  Created by Wild Yaoyao on 14/12/25.
+//  Created by Wild Yaoyao on 14/12/27.
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import "RecordManageViewController.h"
+#import "EditMyInfoViewController.h"
 
-@interface RecordManageViewController ()
+@interface EditMyInfoViewController ()
 
 @end
 
-@implementation RecordManageViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.needsBackItem = YES;
-    }
-    return self;
-}
+@implementation EditMyInfoViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -35,11 +26,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(onBtnSave:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)onBtnSave:(id)sender
+{
+    
 }
 
 /*

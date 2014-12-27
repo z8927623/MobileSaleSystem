@@ -6,9 +6,10 @@
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface MasterViewController : UIViewController
+@interface MasterViewController : CommonViewController
+
 @property (weak, nonatomic) IBOutlet UIImageView *userAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *roleLbl;
 @property (weak, nonatomic) IBOutlet UILabel *nameLbl;

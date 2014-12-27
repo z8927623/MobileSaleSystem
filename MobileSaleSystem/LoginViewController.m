@@ -1,36 +1,18 @@
 //
-//  RecordManageViewController.m
+//  LoginViewController.m
 //  MobileSaleSystem
 //
-//  Created by Wild Yaoyao on 14/12/25.
+//  Created by Wild Yaoyao on 14/12/27.
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import "RecordManageViewController.h"
+#import "LoginViewController.h"
 
-@interface RecordManageViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation RecordManageViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.needsBackItem = YES;
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.needsBackItem = YES;
-    }
-    return self;
-}
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,4 +34,7 @@
 }
 */
 
+- (IBAction)onBtnClose:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		B80267151A4E474C00D007E5 /* PlanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267141A4E474C00D007E5 /* PlanModel.m */; };
 		B80267191A4E4DF500D007E5 /* ActivityPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80267181A4E4DF500D007E5 /* ActivityPlanCell.xib */; };
+		B802671C1A4E5C5200D007E5 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B802671B1A4E5C5200D007E5 /* ActivityDetailViewController.m */; };
+		B802671F1A4E65ED00D007E5 /* CommonNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B802671E1A4E65ED00D007E5 /* CommonNavigationController.m */; };
+		B80267221A4E66F200D007E5 /* navigation-bar-back-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267201A4E66F200D007E5 /* navigation-bar-back-icon@2x.png */; };
+		B80267231A4E66F200D007E5 /* navigation-bar-back-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267211A4E66F200D007E5 /* navigation-bar-back-icon.png */; };
+		B80267261A4E7FD100D007E5 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267241A4E7FD100D007E5 /* icon_back@2x.png */; };
+		B80267271A4E7FD100D007E5 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267251A4E7FD100D007E5 /* icon_back.png */; };
+		B802672A1A4E857400D007E5 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267291A4E857400D007E5 /* CommonViewController.m */; };
+		B802672D1A4E964500D007E5 /* NewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B802672C1A4E964500D007E5 /* NewActivityViewController.m */; };
+		B80267341A4EF00100D007E5 /* icn_profile_person@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267321A4EF00100D007E5 /* icn_profile_person@2x~iphone.png */; };
+		B80267351A4EF00100D007E5 /* icn_profile_person~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267331A4EF00100D007E5 /* icn_profile_person~iphone.png */; };
+		B80267381A4EF07000D007E5 /* icn_locked.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267361A4EF07000D007E5 /* icn_locked.png */; };
+		B80267391A4EF07000D007E5 /* icn_locked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267371A4EF07000D007E5 /* icn_locked@2x.png */; };
+		B802673C1A4EF63100D007E5 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B802673B1A4EF63100D007E5 /* SignUpViewController.m */; };
+		B802673F1A4EF65100D007E5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B802673E1A4EF65100D007E5 /* LoginViewController.m */; };
+		B80267431A4EFC7800D007E5 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267421A4EFC7800D007E5 /* close.png */; };
+		B80267461A4F02B700D007E5 /* EditMyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267451A4F02B700D007E5 /* EditMyInfoViewController.m */; };
 		B87C8F641A4D52FE007F27B4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B87C8F631A4D52FE007F27B4 /* MasterViewController.m */; };
 		B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */; };
 		B89F27BF1A4D175700BAF523 /* EditClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27BE1A4D175700BAF523 /* EditClientViewController.m */; };
@@ -54,6 +70,29 @@
 		B80267141A4E474C00D007E5 /* PlanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanModel.m; sourceTree = "<group>"; };
 		B80267171A4E498C00D007E5 /* MobileSaleSystem-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MobileSaleSystem-Prefix.pch"; sourceTree = "<group>"; };
 		B80267181A4E4DF500D007E5 /* ActivityPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityPlanCell.xib; sourceTree = "<group>"; };
+		B802671A1A4E5C5200D007E5 /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
+		B802671B1A4E5C5200D007E5 /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
+		B802671D1A4E65ED00D007E5 /* CommonNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonNavigationController.h; sourceTree = "<group>"; };
+		B802671E1A4E65ED00D007E5 /* CommonNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonNavigationController.m; sourceTree = "<group>"; };
+		B80267201A4E66F200D007E5 /* navigation-bar-back-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-bar-back-icon@2x.png"; sourceTree = "<group>"; };
+		B80267211A4E66F200D007E5 /* navigation-bar-back-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-bar-back-icon.png"; sourceTree = "<group>"; };
+		B80267241A4E7FD100D007E5 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
+		B80267251A4E7FD100D007E5 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
+		B80267281A4E857400D007E5 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
+		B80267291A4E857400D007E5 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
+		B802672B1A4E964500D007E5 /* NewActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewActivityViewController.h; sourceTree = "<group>"; };
+		B802672C1A4E964500D007E5 /* NewActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewActivityViewController.m; sourceTree = "<group>"; };
+		B80267321A4EF00100D007E5 /* icn_profile_person@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_profile_person@2x~iphone.png"; sourceTree = "<group>"; };
+		B80267331A4EF00100D007E5 /* icn_profile_person~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_profile_person~iphone.png"; sourceTree = "<group>"; };
+		B80267361A4EF07000D007E5 /* icn_locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_locked.png; sourceTree = "<group>"; };
+		B80267371A4EF07000D007E5 /* icn_locked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_locked@2x.png"; sourceTree = "<group>"; };
+		B802673A1A4EF63100D007E5 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		B802673B1A4EF63100D007E5 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		B802673D1A4EF65100D007E5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B802673E1A4EF65100D007E5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B80267421A4EFC7800D007E5 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		B80267441A4F02B700D007E5 /* EditMyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMyInfoViewController.h; sourceTree = "<group>"; };
+		B80267451A4F02B700D007E5 /* EditMyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMyInfoViewController.m; sourceTree = "<group>"; };
 		B87C8F621A4D52FE007F27B4 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		B87C8F631A4D52FE007F27B4 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		B89F27B71A4D0F3800BAF523 /* ClientDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientDetailViewController.h; sourceTree = "<group>"; };
@@ -141,9 +180,22 @@
 		B8F64C1A1A418E5200C8EAA7 /* MobileSaleSystem */ = {
 			isa = PBXGroup;
 			children = (
+				B80267361A4EF07000D007E5 /* icn_locked.png */,
+				B80267371A4EF07000D007E5 /* icn_locked@2x.png */,
+				B80267321A4EF00100D007E5 /* icn_profile_person@2x~iphone.png */,
+				B80267331A4EF00100D007E5 /* icn_profile_person~iphone.png */,
+				B80267201A4E66F200D007E5 /* navigation-bar-back-icon@2x.png */,
+				B80267211A4E66F200D007E5 /* navigation-bar-back-icon.png */,
+				B80267241A4E7FD100D007E5 /* icon_back@2x.png */,
+				B80267251A4E7FD100D007E5 /* icon_back.png */,
+				B80267421A4EFC7800D007E5 /* close.png */,
 				B8F64C461A4191F000C8EAA7 /* Resources */,
 				B8F64C1F1A418E5200C8EAA7 /* AppDelegate.h */,
 				B8F64C201A418E5200C8EAA7 /* AppDelegate.m */,
+				B802671D1A4E65ED00D007E5 /* CommonNavigationController.h */,
+				B802671E1A4E65ED00D007E5 /* CommonNavigationController.m */,
+				B80267281A4E857400D007E5 /* CommonViewController.h */,
+				B80267291A4E857400D007E5 /* CommonViewController.m */,
 				B87C8F621A4D52FE007F27B4 /* MasterViewController.h */,
 				B87C8F631A4D52FE007F27B4 /* MasterViewController.m */,
 				B8F9C99B1A4C5EA00017A97A /* ClientManageViewController.h */,
@@ -160,14 +212,24 @@
 				B8F9C9A21A4C5EE40017A97A /* AfterSaleServiceViewController.m */,
 				B8F9C9A41A4C5EF50017A97A /* ActivityPlanViewController.h */,
 				B8F9C9A51A4C5EF50017A97A /* ActivityPlanViewController.m */,
+				B802671A1A4E5C5200D007E5 /* ActivityDetailViewController.h */,
+				B802671B1A4E5C5200D007E5 /* ActivityDetailViewController.m */,
+				B802672B1A4E964500D007E5 /* NewActivityViewController.h */,
+				B802672C1A4E964500D007E5 /* NewActivityViewController.m */,
 				B8F9C9A71A4C5F060017A97A /* RecordManageViewController.h */,
 				B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */,
 				B8F9C9AA1A4C5F210017A97A /* SignInManageViewController.h */,
 				B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */,
+				B802673D1A4EF65100D007E5 /* LoginViewController.h */,
+				B802673E1A4EF65100D007E5 /* LoginViewController.m */,
+				B802673A1A4EF63100D007E5 /* SignUpViewController.h */,
+				B802673B1A4EF63100D007E5 /* SignUpViewController.m */,
 				B8F9C9AD1A4C5F3A0017A97A /* RoutePlanViewController.h */,
 				B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */,
 				B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */,
 				B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */,
+				B80267441A4F02B700D007E5 /* EditMyInfoViewController.h */,
+				B80267451A4F02B700D007E5 /* EditMyInfoViewController.m */,
 				B89F27C31A4D4D8D00BAF523 /* ActivityPlanCell.h */,
 				B89F27C41A4D4D8D00BAF523 /* ActivityPlanCell.m */,
 				B80267181A4E4DF500D007E5 /* ActivityPlanCell.xib */,
@@ -310,12 +372,21 @@
 				B8F64C2C1A418E5200C8EAA7 /* LaunchScreen.xib in Resources */,
 				B8F64C5C1A41942C00C8EAA7 /* 3.jpg in Resources */,
 				B8F64C491A4191FB00C8EAA7 /* 2.jpg in Resources */,
+				B80267261A4E7FD100D007E5 /* icon_back@2x.png in Resources */,
+				B80267341A4EF00100D007E5 /* icn_profile_person@2x~iphone.png in Resources */,
+				B80267231A4E66F200D007E5 /* navigation-bar-back-icon.png in Resources */,
 				B8F64C4C1A41921700C8EAA7 /* 7.jpg in Resources */,
 				B8F64C4A1A4191FB00C8EAA7 /* 1.jpg in Resources */,
 				B8F64C501A41922D00C8EAA7 /* 5.jpg in Resources */,
+				B80267391A4EF07000D007E5 /* icn_locked@2x.png in Resources */,
+				B80267381A4EF07000D007E5 /* icn_locked.png in Resources */,
 				B8F64C5A1A41939C00C8EAA7 /* 0.png in Resources */,
 				B8F64C4E1A41921B00C8EAA7 /* 6.png in Resources */,
+				B80267431A4EFC7800D007E5 /* close.png in Resources */,
+				B80267271A4E7FD100D007E5 /* icon_back.png in Resources */,
 				B80267191A4E4DF500D007E5 /* ActivityPlanCell.xib in Resources */,
+				B80267351A4EF00100D007E5 /* icn_profile_person~iphone.png in Resources */,
+				B80267221A4E66F200D007E5 /* navigation-bar-back-icon@2x.png in Resources */,
 				B8F64C291A418E5200C8EAA7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,19 +407,26 @@
 			files = (
 				B89F27C51A4D4D8D00BAF523 /* ActivityPlanCell.m in Sources */,
 				B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */,
+				B802671C1A4E5C5200D007E5 /* ActivityDetailViewController.m in Sources */,
+				B80267461A4F02B700D007E5 /* EditMyInfoViewController.m in Sources */,
 				B80267151A4E474C00D007E5 /* PlanModel.m in Sources */,
 				B8F9C9A01A4C5EC80017A97A /* FundsApplyViewController.m in Sources */,
+				B802673C1A4EF63100D007E5 /* SignUpViewController.m in Sources */,
 				B8F64C211A418E5200C8EAA7 /* AppDelegate.m in Sources */,
 				B8F9C9A31A4C5EE40017A97A /* AfterSaleServiceViewController.m in Sources */,
 				B8F9C9AC1A4C5F210017A97A /* SignInManageViewController.m in Sources */,
+				B802672A1A4E857400D007E5 /* CommonViewController.m in Sources */,
 				B8F9C99D1A4C5EA00017A97A /* ClientManageViewController.m in Sources */,
 				B8F9C9A61A4C5EF50017A97A /* ActivityPlanViewController.m in Sources */,
 				B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */,
 				B89F27C21A4D341E00BAF523 /* NewClientViewController.m in Sources */,
 				B89F27BF1A4D175700BAF523 /* EditClientViewController.m in Sources */,
 				B87C8F641A4D52FE007F27B4 /* MasterViewController.m in Sources */,
+				B802671F1A4E65ED00D007E5 /* CommonNavigationController.m in Sources */,
+				B802672D1A4E964500D007E5 /* NewActivityViewController.m in Sources */,
 				B8F64C1E1A418E5200C8EAA7 /* main.m in Sources */,
 				B8E6DDA01A4C62CF00B2DA07 /* MyInfoViewController.m in Sources */,
+				B802673F1A4EF65100D007E5 /* LoginViewController.m in Sources */,
 				B8F9C9AF1A4C5F3A0017A97A /* RoutePlanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,9 +549,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSaleSystem/MobileSaleSystem-Prefix.pch";
 				INFOPLIST_FILE = MobileSaleSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -483,9 +563,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSaleSystem/MobileSaleSystem-Prefix.pch";
 				INFOPLIST_FILE = MobileSaleSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Yang Yao. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CommonViewController.h"
 
-@interface ClientDetailViewController : UIViewController
+@interface ClientDetailViewController : CommonViewController
 
 @end

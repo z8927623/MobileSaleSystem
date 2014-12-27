@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 使用backBarButtonItem，无法调整位置，但手势返回可用，但是push到第二个页面返回按钮不会随着手势返回而渐变
+//    [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+//    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"navigation-bar-back-icon"]];
+//    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"navigation-bar-back-icon"]];
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
+    
     return YES;
 }
 
