@@ -739,7 +739,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pop-ZE-3sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-842" y="-2797"/>
+            <point key="canvasLocation" x="-1166" y="-2834"/>
         </scene>
         <!--售后服务-->
         <scene sceneID="Wvu-Fi-w2p">
@@ -776,7 +776,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityPlanCellIdentifer" rowHeight="100" id="ySV-l1-Tgm" customClass="ActivityPlanCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="ySV-l1-Tgm">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ySV-l1-Tgm" id="qdF-4G-90J">
@@ -799,11 +799,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="creator" destination="Bv5-xP-XvZ" id="KUT-Uu-9Y3"/>
-                                            <outlet property="detailLbl" destination="yK1-5N-E63" id="Tfh-7g-Bsw"/>
-                                            <outlet property="timeLbl" destination="O2D-kS-YrZ" id="eAk-2Q-Y9a"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -821,7 +816,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZY4-22-zkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-978" y="-1883"/>
+            <point key="canvasLocation" x="-1335" y="-1861"/>
         </scene>
         <!--签到管理-->
         <scene sceneID="sAG-Ng-S5E">

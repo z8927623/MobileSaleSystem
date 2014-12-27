@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80267151A4E474C00D007E5 /* PlanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267141A4E474C00D007E5 /* PlanModel.m */; };
+		B80267191A4E4DF500D007E5 /* ActivityPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80267181A4E4DF500D007E5 /* ActivityPlanCell.xib */; };
 		B87C8F641A4D52FE007F27B4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B87C8F631A4D52FE007F27B4 /* MasterViewController.m */; };
 		B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */; };
 		B89F27BF1A4D175700BAF523 /* EditClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27BE1A4D175700BAF523 /* EditClientViewController.m */; };
@@ -48,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B80267131A4E474C00D007E5 /* PlanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanModel.h; sourceTree = "<group>"; };
+		B80267141A4E474C00D007E5 /* PlanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanModel.m; sourceTree = "<group>"; };
+		B80267171A4E498C00D007E5 /* MobileSaleSystem-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MobileSaleSystem-Prefix.pch"; sourceTree = "<group>"; };
+		B80267181A4E4DF500D007E5 /* ActivityPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityPlanCell.xib; sourceTree = "<group>"; };
 		B87C8F621A4D52FE007F27B4 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		B87C8F631A4D52FE007F27B4 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		B89F27B71A4D0F3800BAF523 /* ClientDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientDetailViewController.h; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 				B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */,
 				B89F27C31A4D4D8D00BAF523 /* ActivityPlanCell.h */,
 				B89F27C41A4D4D8D00BAF523 /* ActivityPlanCell.m */,
+				B80267181A4E4DF500D007E5 /* ActivityPlanCell.xib */,
+				B80267131A4E474C00D007E5 /* PlanModel.h */,
+				B80267141A4E474C00D007E5 /* PlanModel.m */,
 				B8F64C251A418E5200C8EAA7 /* Main.storyboard */,
 				B8F64C281A418E5200C8EAA7 /* Images.xcassets */,
 				B8F64C2A1A418E5200C8EAA7 /* LaunchScreen.xib */,
@@ -177,6 +186,7 @@
 			children = (
 				B8F64C1C1A418E5200C8EAA7 /* Info.plist */,
 				B8F64C1D1A418E5200C8EAA7 /* main.m */,
+				B80267171A4E498C00D007E5 /* MobileSaleSystem-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,6 +315,7 @@
 				B8F64C501A41922D00C8EAA7 /* 5.jpg in Resources */,
 				B8F64C5A1A41939C00C8EAA7 /* 0.png in Resources */,
 				B8F64C4E1A41921B00C8EAA7 /* 6.png in Resources */,
+				B80267191A4E4DF500D007E5 /* ActivityPlanCell.xib in Resources */,
 				B8F64C291A418E5200C8EAA7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +336,7 @@
 			files = (
 				B89F27C51A4D4D8D00BAF523 /* ActivityPlanCell.m in Sources */,
 				B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */,
+				B80267151A4E474C00D007E5 /* PlanModel.m in Sources */,
 				B8F9C9A01A4C5EC80017A97A /* FundsApplyViewController.m in Sources */,
 				B8F64C211A418E5200C8EAA7 /* AppDelegate.m in Sources */,
 				B8F9C9A31A4C5EE40017A97A /* AfterSaleServiceViewController.m in Sources */,
@@ -459,6 +471,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSaleSystem/MobileSaleSystem-Prefix.pch";
 				INFOPLIST_FILE = MobileSaleSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -469,6 +483,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSaleSystem/MobileSaleSystem-Prefix.pch";
 				INFOPLIST_FILE = MobileSaleSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

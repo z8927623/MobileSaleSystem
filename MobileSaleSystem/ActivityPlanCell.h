@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlanModel.h"
 
 @interface ActivityPlanCell : UITableViewCell
 
@@ -14,7 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLbl;
 @property (weak, nonatomic) IBOutlet UILabel *detailLbl;
 
-+ (CGFloat)getCellHeight:(NSString *)detail;
+@property (strong, nonatomic) PlanModel *model;
 
++ (CGFloat)getCellHeight:(NSString *)detail width:(CGFloat)width;
 
 @end

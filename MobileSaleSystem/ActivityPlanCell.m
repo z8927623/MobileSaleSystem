@@ -12,6 +12,11 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+//    self.translatesAutoresizingMaskIntoConstraints = NO;
+//    self.superview.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.detailLbl.backgroundColor = [UIColor yellowColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,24 +25,35 @@
     // Configure the view for the selected state
 }
 
-+ (CGFloat)getCellHeight:(NSString *)detail
+- (void)layoutSubviews
 {
-//    CGFloat totalHeight = 35;
-//    
-//    UILabel *detailLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 250, 0)];
-//    detailLbl.font = [UIFont systemFontOfSize:14.0];
-//    detailLbl.numberOfLines = 0;
-//    detailLbl.text = detail;
-//    
-//    CGSize size = [detailLbl.text sizeWithFont:detailLbl.font
-//                             constrainedToSize:CGSizeMake(detailLbl.frame.size.width, MAXFLOAT)
-//                                 lineBreakMode:NSLineBreakByWordWrapping];
-//    
-//    totalHeight += size.height+10;
-//    
-//    return totalHeight;
+    [super layoutSubviews];
     
-    return 0;
+    CGSize size = [self.detailLbl.text sizeWithFont:self.detailLbl.font
+                             constrainedToSize:CGSizeMake(self.frame.size.width-40, MAXFLOAT)
+                                 lineBreakMode:NSLineBreakByWordWrapping];
+    CGRect frame = self.detailLbl.frame;
+    frame.size.height = size.height;
+    self.detailLbl.frame = frame;
+}
+
++ (CGFloat)getCellHeight:(NSString *)detail width:(CGFloat)width
+{
+    CGFloat totalHeight = 55;
+    
+    UILabel *detailLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 0)];
+    detailLbl.font = [UIFont systemFontOfSize:15.0];
+    detailLbl.numberOfLines = 0;
+    detailLbl.text = detail;
+    
+    CGSize size = [detailLbl.text sizeWithFont:detailLbl.font
+                             constrainedToSize:CGSizeMake(width, MAXFLOAT)
+                                 lineBreakMode:NSLineBreakByWordWrapping];
+//    detailLbl.text boundingRectWithSize:CGSizeMake(detailLbl.frame.size.width, MAXFLOAT) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{  } context:<#(NSStringDrawingContext *)#>
+    
+    totalHeight += size.height+10;
+    
+    return totalHeight;
 }
 
 @end
