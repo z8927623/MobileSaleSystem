@@ -25,6 +25,31 @@
 		B802673F1A4EF65100D007E5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B802673E1A4EF65100D007E5 /* LoginViewController.m */; };
 		B80267431A4EFC7800D007E5 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = B80267421A4EFC7800D007E5 /* close.png */; };
 		B80267461A4F02B700D007E5 /* EditMyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267451A4F02B700D007E5 /* EditMyInfoViewController.m */; };
+		B80267CA1A502DDF00D007E5 /* NewFundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267C91A502DDF00D007E5 /* NewFundsViewController.m */; };
+		B80267D11A50309C00D007E5 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B80267CE1A50309C00D007E5 /* AMap.bundle */; };
+		B80267D21A50309C00D007E5 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267CF1A50309C00D007E5 /* AMapSearchKit.framework */; };
+		B80267D31A50309C00D007E5 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267D01A50309C00D007E5 /* MAMapKit.framework */; };
+		B80267D81A50316F00D007E5 /* BaseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267D71A50316F00D007E5 /* BaseMapViewController.m */; };
+		B80267DA1A5031C600D007E5 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267D91A5031C500D007E5 /* libstdc++.6.0.9.dylib */; };
+		B80267DC1A5031CA00D007E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267DB1A5031CA00D007E5 /* Security.framework */; };
+		B80267DE1A5031D100D007E5 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267DD1A5031D100D007E5 /* libstdc++.dylib */; };
+		B80267E01A5031D700D007E5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267DF1A5031D700D007E5 /* CoreLocation.framework */; };
+		B80267E21A5031DD00D007E5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267E11A5031DD00D007E5 /* CoreTelephony.framework */; };
+		B80267E41A50320B00D007E5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267E31A50320B00D007E5 /* libz.dylib */; };
+		B80267E61A50321000D007E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267E51A50321000D007E5 /* QuartzCore.framework */; };
+		B80267E81A50321500D007E5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267E71A50321500D007E5 /* OpenGLES.framework */; };
+		B80267EA1A50328900D007E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80267E91A50328900D007E5 /* SystemConfiguration.framework */; };
+		B80267EF1A50371200D007E5 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267EE1A50371200D007E5 /* CommonUtility.m */; };
+		B80267F21A50372C00D007E5 /* LineDashPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267F11A50372C00D007E5 /* LineDashPolyline.m */; };
+		B80267F51A50373A00D007E5 /* RouteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267F41A50373A00D007E5 /* RouteDetailViewController.m */; };
+		B80267F81A50375700D007E5 /* PathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267F71A50375700D007E5 /* PathDetailViewController.m */; };
+		B80267FB1A5037E900D007E5 /* StepDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267FA1A5037E900D007E5 /* StepDetailViewController.m */; };
+		B80267FE1A50381300D007E5 /* TransitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80267FD1A50381300D007E5 /* TransitDetailViewController.m */; };
+		B80268011A50382700D007E5 /* SegmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80268001A50382700D007E5 /* SegmentDetailViewController.m */; };
+		B80268041A50383B00D007E5 /* WalkingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80268031A50383B00D007E5 /* WalkingDetailViewController.m */; };
+		B80268071A50384E00D007E5 /* BusLineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80268061A50384E00D007E5 /* BusLineDetailViewController.m */; };
+		B802680A1A50386500D007E5 /* BusStopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80268091A50386500D007E5 /* BusStopDetailViewController.m */; };
+		B80268141A5046DF00D007E5 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80268131A5046DF00D007E5 /* NavigationViewController.m */; };
 		B87C8F641A4D52FE007F27B4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B87C8F631A4D52FE007F27B4 /* MasterViewController.m */; };
 		B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */; };
 		B89F27BF1A4D175700BAF523 /* EditClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89F27BE1A4D175700BAF523 /* EditClientViewController.m */; };
@@ -52,7 +77,6 @@
 		B8F9C9A61A4C5EF50017A97A /* ActivityPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9A51A4C5EF50017A97A /* ActivityPlanViewController.m */; };
 		B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */; };
 		B8F9C9AC1A4C5F210017A97A /* SignInManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */; };
-		B8F9C9AF1A4C5F3A0017A97A /* RoutePlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +117,45 @@
 		B80267421A4EFC7800D007E5 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		B80267441A4F02B700D007E5 /* EditMyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMyInfoViewController.h; sourceTree = "<group>"; };
 		B80267451A4F02B700D007E5 /* EditMyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMyInfoViewController.m; sourceTree = "<group>"; };
+		B80267C81A502DDF00D007E5 /* NewFundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFundsViewController.h; sourceTree = "<group>"; };
+		B80267C91A502DDF00D007E5 /* NewFundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFundsViewController.m; sourceTree = "<group>"; };
+		B80267CE1A50309C00D007E5 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
+		B80267CF1A50309C00D007E5 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		B80267D01A50309C00D007E5 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		B80267D61A50316F00D007E5 /* BaseMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMapViewController.h; sourceTree = "<group>"; };
+		B80267D71A50316F00D007E5 /* BaseMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMapViewController.m; sourceTree = "<group>"; };
+		B80267D91A5031C500D007E5 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		B80267DB1A5031CA00D007E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B80267DD1A5031D100D007E5 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		B80267DF1A5031D700D007E5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B80267E11A5031DD00D007E5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B80267E31A50320B00D007E5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B80267E51A50321000D007E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B80267E71A50321500D007E5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B80267E91A50328900D007E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B80267EC1A50349300D007E5 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
+		B80267ED1A50371200D007E5 /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		B80267EE1A50371200D007E5 /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
+		B80267F01A50372C00D007E5 /* LineDashPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDashPolyline.h; sourceTree = "<group>"; };
+		B80267F11A50372C00D007E5 /* LineDashPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDashPolyline.m; sourceTree = "<group>"; };
+		B80267F31A50373A00D007E5 /* RouteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDetailViewController.h; sourceTree = "<group>"; };
+		B80267F41A50373A00D007E5 /* RouteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDetailViewController.m; sourceTree = "<group>"; };
+		B80267F61A50375700D007E5 /* PathDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathDetailViewController.h; sourceTree = "<group>"; };
+		B80267F71A50375700D007E5 /* PathDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathDetailViewController.m; sourceTree = "<group>"; };
+		B80267F91A5037E900D007E5 /* StepDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepDetailViewController.h; sourceTree = "<group>"; };
+		B80267FA1A5037E900D007E5 /* StepDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepDetailViewController.m; sourceTree = "<group>"; };
+		B80267FC1A50381300D007E5 /* TransitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitDetailViewController.h; sourceTree = "<group>"; };
+		B80267FD1A50381300D007E5 /* TransitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitDetailViewController.m; sourceTree = "<group>"; };
+		B80267FF1A50382700D007E5 /* SegmentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentDetailViewController.h; sourceTree = "<group>"; };
+		B80268001A50382700D007E5 /* SegmentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentDetailViewController.m; sourceTree = "<group>"; };
+		B80268021A50383B00D007E5 /* WalkingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkingDetailViewController.h; sourceTree = "<group>"; };
+		B80268031A50383B00D007E5 /* WalkingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkingDetailViewController.m; sourceTree = "<group>"; };
+		B80268051A50384E00D007E5 /* BusLineDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineDetailViewController.h; sourceTree = "<group>"; };
+		B80268061A50384E00D007E5 /* BusLineDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLineDetailViewController.m; sourceTree = "<group>"; };
+		B80268081A50386500D007E5 /* BusStopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopDetailViewController.h; sourceTree = "<group>"; };
+		B80268091A50386500D007E5 /* BusStopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopDetailViewController.m; sourceTree = "<group>"; };
+		B80268121A5046DF00D007E5 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		B80268131A5046DF00D007E5 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		B87C8F621A4D52FE007F27B4 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		B87C8F631A4D52FE007F27B4 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		B89F27B71A4D0F3800BAF523 /* ClientDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientDetailViewController.h; sourceTree = "<group>"; };
@@ -137,8 +200,6 @@
 		B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordManageViewController.m; sourceTree = "<group>"; };
 		B8F9C9AA1A4C5F210017A97A /* SignInManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInManageViewController.h; sourceTree = "<group>"; };
 		B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInManageViewController.m; sourceTree = "<group>"; };
-		B8F9C9AD1A4C5F3A0017A97A /* RoutePlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePlanViewController.h; sourceTree = "<group>"; };
-		B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePlanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +207,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80267EA1A50328900D007E5 /* SystemConfiguration.framework in Frameworks */,
+				B80267E81A50321500D007E5 /* OpenGLES.framework in Frameworks */,
+				B80267E61A50321000D007E5 /* QuartzCore.framework in Frameworks */,
+				B80267E41A50320B00D007E5 /* libz.dylib in Frameworks */,
+				B80267E21A5031DD00D007E5 /* CoreTelephony.framework in Frameworks */,
+				B80267E01A5031D700D007E5 /* CoreLocation.framework in Frameworks */,
+				B80267DE1A5031D100D007E5 /* libstdc++.dylib in Frameworks */,
+				B80267DC1A5031CA00D007E5 /* Security.framework in Frameworks */,
+				B80267DA1A5031C600D007E5 /* libstdc++.6.0.9.dylib in Frameworks */,
+				B80267D31A50309C00D007E5 /* MAMapKit.framework in Frameworks */,
+				B80267D21A50309C00D007E5 /* AMapSearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,9 +231,153 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B80267CB1A50307900D007E5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B80267361A4EF07000D007E5 /* icn_locked.png */,
+				B80267371A4EF07000D007E5 /* icn_locked@2x.png */,
+				B80267321A4EF00100D007E5 /* icn_profile_person@2x~iphone.png */,
+				B80267331A4EF00100D007E5 /* icn_profile_person~iphone.png */,
+				B80267201A4E66F200D007E5 /* navigation-bar-back-icon@2x.png */,
+				B80267211A4E66F200D007E5 /* navigation-bar-back-icon.png */,
+				B80267241A4E7FD100D007E5 /* icon_back@2x.png */,
+				B80267251A4E7FD100D007E5 /* icon_back.png */,
+				B80267421A4EFC7800D007E5 /* close.png */,
+				B8F64C591A41939C00C8EAA7 /* 0.png */,
+				B8F64C481A4191FB00C8EAA7 /* 1.jpg */,
+				B8F64C471A4191FB00C8EAA7 /* 2.jpg */,
+				B8F64C5B1A41942C00C8EAA7 /* 3.jpg */,
+				B8F64C511A41923300C8EAA7 /* 4.jpg */,
+				B8F64C4F1A41922D00C8EAA7 /* 5.jpg */,
+				B8F64C4D1A41921B00C8EAA7 /* 6.png */,
+				B8F64C4B1A41921700C8EAA7 /* 7.jpg */,
+				B8F64C551A4192F600C8EAA7 /* 8.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		B80267CC1A50308E00D007E5 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				B80267CD1A50309C00D007E5 /* MAMap */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		B80267CD1A50309C00D007E5 /* MAMap */ = {
+			isa = PBXGroup;
+			children = (
+				B80267CE1A50309C00D007E5 /* AMap.bundle */,
+				B80267CF1A50309C00D007E5 /* AMapSearchKit.framework */,
+				B80267D01A50309C00D007E5 /* MAMapKit.framework */,
+			);
+			path = MAMap;
+			sourceTree = "<group>";
+		};
+		B80267D41A5030A700D007E5 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				B80268111A5042E200D007E5 /* Common */,
+				B80267EB1A50347E00D007E5 /* Map */,
+				B8F64C1F1A418E5200C8EAA7 /* AppDelegate.h */,
+				B8F64C201A418E5200C8EAA7 /* AppDelegate.m */,
+				B87C8F621A4D52FE007F27B4 /* MasterViewController.h */,
+				B87C8F631A4D52FE007F27B4 /* MasterViewController.m */,
+				B8F9C99B1A4C5EA00017A97A /* ClientManageViewController.h */,
+				B8F9C99C1A4C5EA00017A97A /* ClientManageViewController.m */,
+				B89F27B71A4D0F3800BAF523 /* ClientDetailViewController.h */,
+				B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */,
+				B89F27BD1A4D175700BAF523 /* EditClientViewController.h */,
+				B89F27BE1A4D175700BAF523 /* EditClientViewController.m */,
+				B89F27C01A4D341E00BAF523 /* NewClientViewController.h */,
+				B89F27C11A4D341E00BAF523 /* NewClientViewController.m */,
+				B8F9C99E1A4C5EC80017A97A /* FundsApplyViewController.h */,
+				B8F9C99F1A4C5EC80017A97A /* FundsApplyViewController.m */,
+				B80267C81A502DDF00D007E5 /* NewFundsViewController.h */,
+				B80267C91A502DDF00D007E5 /* NewFundsViewController.m */,
+				B8F9C9A11A4C5EE40017A97A /* AfterSaleServiceViewController.h */,
+				B8F9C9A21A4C5EE40017A97A /* AfterSaleServiceViewController.m */,
+				B8F9C9A41A4C5EF50017A97A /* ActivityPlanViewController.h */,
+				B8F9C9A51A4C5EF50017A97A /* ActivityPlanViewController.m */,
+				B802671A1A4E5C5200D007E5 /* ActivityDetailViewController.h */,
+				B802671B1A4E5C5200D007E5 /* ActivityDetailViewController.m */,
+				B802672B1A4E964500D007E5 /* NewActivityViewController.h */,
+				B802672C1A4E964500D007E5 /* NewActivityViewController.m */,
+				B8F9C9A71A4C5F060017A97A /* RecordManageViewController.h */,
+				B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */,
+				B8F9C9AA1A4C5F210017A97A /* SignInManageViewController.h */,
+				B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */,
+				B802673D1A4EF65100D007E5 /* LoginViewController.h */,
+				B802673E1A4EF65100D007E5 /* LoginViewController.m */,
+				B802673A1A4EF63100D007E5 /* SignUpViewController.h */,
+				B802673B1A4EF63100D007E5 /* SignUpViewController.m */,
+				B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */,
+				B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */,
+				B80267441A4F02B700D007E5 /* EditMyInfoViewController.h */,
+				B80267451A4F02B700D007E5 /* EditMyInfoViewController.m */,
+				B89F27C31A4D4D8D00BAF523 /* ActivityPlanCell.h */,
+				B89F27C41A4D4D8D00BAF523 /* ActivityPlanCell.m */,
+				B80267131A4E474C00D007E5 /* PlanModel.h */,
+				B80267141A4E474C00D007E5 /* PlanModel.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		B80267EB1A50347E00D007E5 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B80267D61A50316F00D007E5 /* BaseMapViewController.h */,
+				B80267D71A50316F00D007E5 /* BaseMapViewController.m */,
+				B80268121A5046DF00D007E5 /* NavigationViewController.h */,
+				B80268131A5046DF00D007E5 /* NavigationViewController.m */,
+				B80267F31A50373A00D007E5 /* RouteDetailViewController.h */,
+				B80267F41A50373A00D007E5 /* RouteDetailViewController.m */,
+				B80267F61A50375700D007E5 /* PathDetailViewController.h */,
+				B80267F71A50375700D007E5 /* PathDetailViewController.m */,
+				B80267F91A5037E900D007E5 /* StepDetailViewController.h */,
+				B80267FA1A5037E900D007E5 /* StepDetailViewController.m */,
+				B80267FC1A50381300D007E5 /* TransitDetailViewController.h */,
+				B80267FD1A50381300D007E5 /* TransitDetailViewController.m */,
+				B80267FF1A50382700D007E5 /* SegmentDetailViewController.h */,
+				B80268001A50382700D007E5 /* SegmentDetailViewController.m */,
+				B80268021A50383B00D007E5 /* WalkingDetailViewController.h */,
+				B80268031A50383B00D007E5 /* WalkingDetailViewController.m */,
+				B80268051A50384E00D007E5 /* BusLineDetailViewController.h */,
+				B80268061A50384E00D007E5 /* BusLineDetailViewController.m */,
+				B80268081A50386500D007E5 /* BusStopDetailViewController.h */,
+				B80268091A50386500D007E5 /* BusStopDetailViewController.m */,
+				B80267ED1A50371200D007E5 /* CommonUtility.h */,
+				B80267EE1A50371200D007E5 /* CommonUtility.m */,
+				B80267F01A50372C00D007E5 /* LineDashPolyline.h */,
+				B80267F11A50372C00D007E5 /* LineDashPolyline.m */,
+				B80267EC1A50349300D007E5 /* APIKey.h */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		B80268111A5042E200D007E5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B802671D1A4E65ED00D007E5 /* CommonNavigationController.h */,
+				B802671E1A4E65ED00D007E5 /* CommonNavigationController.m */,
+				B80267281A4E857400D007E5 /* CommonViewController.h */,
+				B80267291A4E857400D007E5 /* CommonViewController.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		B8F64C0F1A418E5200C8EAA7 = {
 			isa = PBXGroup;
 			children = (
+				B80267E91A50328900D007E5 /* SystemConfiguration.framework */,
+				B80267E71A50321500D007E5 /* OpenGLES.framework */,
+				B80267E51A50321000D007E5 /* QuartzCore.framework */,
+				B80267E31A50320B00D007E5 /* libz.dylib */,
+				B80267E11A5031DD00D007E5 /* CoreTelephony.framework */,
+				B80267DF1A5031D700D007E5 /* CoreLocation.framework */,
+				B80267DD1A5031D100D007E5 /* libstdc++.dylib */,
+				B80267DB1A5031CA00D007E5 /* Security.framework */,
+				B80267D91A5031C500D007E5 /* libstdc++.6.0.9.dylib */,
 				B8F64C1A1A418E5200C8EAA7 /* MobileSaleSystem */,
 				B8F64C341A418E5200C8EAA7 /* MobileSaleSystemTests */,
 				B8F64C191A418E5200C8EAA7 /* Products */,
@@ -180,61 +396,10 @@
 		B8F64C1A1A418E5200C8EAA7 /* MobileSaleSystem */ = {
 			isa = PBXGroup;
 			children = (
-				B80267361A4EF07000D007E5 /* icn_locked.png */,
-				B80267371A4EF07000D007E5 /* icn_locked@2x.png */,
-				B80267321A4EF00100D007E5 /* icn_profile_person@2x~iphone.png */,
-				B80267331A4EF00100D007E5 /* icn_profile_person~iphone.png */,
-				B80267201A4E66F200D007E5 /* navigation-bar-back-icon@2x.png */,
-				B80267211A4E66F200D007E5 /* navigation-bar-back-icon.png */,
-				B80267241A4E7FD100D007E5 /* icon_back@2x.png */,
-				B80267251A4E7FD100D007E5 /* icon_back.png */,
-				B80267421A4EFC7800D007E5 /* close.png */,
+				B80267D41A5030A700D007E5 /* Class */,
+				B80267CC1A50308E00D007E5 /* Vendors */,
 				B8F64C461A4191F000C8EAA7 /* Resources */,
-				B8F64C1F1A418E5200C8EAA7 /* AppDelegate.h */,
-				B8F64C201A418E5200C8EAA7 /* AppDelegate.m */,
-				B802671D1A4E65ED00D007E5 /* CommonNavigationController.h */,
-				B802671E1A4E65ED00D007E5 /* CommonNavigationController.m */,
-				B80267281A4E857400D007E5 /* CommonViewController.h */,
-				B80267291A4E857400D007E5 /* CommonViewController.m */,
-				B87C8F621A4D52FE007F27B4 /* MasterViewController.h */,
-				B87C8F631A4D52FE007F27B4 /* MasterViewController.m */,
-				B8F9C99B1A4C5EA00017A97A /* ClientManageViewController.h */,
-				B8F9C99C1A4C5EA00017A97A /* ClientManageViewController.m */,
-				B89F27B71A4D0F3800BAF523 /* ClientDetailViewController.h */,
-				B89F27B81A4D0F3800BAF523 /* ClientDetailViewController.m */,
-				B89F27BD1A4D175700BAF523 /* EditClientViewController.h */,
-				B89F27BE1A4D175700BAF523 /* EditClientViewController.m */,
-				B89F27C01A4D341E00BAF523 /* NewClientViewController.h */,
-				B89F27C11A4D341E00BAF523 /* NewClientViewController.m */,
-				B8F9C99E1A4C5EC80017A97A /* FundsApplyViewController.h */,
-				B8F9C99F1A4C5EC80017A97A /* FundsApplyViewController.m */,
-				B8F9C9A11A4C5EE40017A97A /* AfterSaleServiceViewController.h */,
-				B8F9C9A21A4C5EE40017A97A /* AfterSaleServiceViewController.m */,
-				B8F9C9A41A4C5EF50017A97A /* ActivityPlanViewController.h */,
-				B8F9C9A51A4C5EF50017A97A /* ActivityPlanViewController.m */,
-				B802671A1A4E5C5200D007E5 /* ActivityDetailViewController.h */,
-				B802671B1A4E5C5200D007E5 /* ActivityDetailViewController.m */,
-				B802672B1A4E964500D007E5 /* NewActivityViewController.h */,
-				B802672C1A4E964500D007E5 /* NewActivityViewController.m */,
-				B8F9C9A71A4C5F060017A97A /* RecordManageViewController.h */,
-				B8F9C9A81A4C5F060017A97A /* RecordManageViewController.m */,
-				B8F9C9AA1A4C5F210017A97A /* SignInManageViewController.h */,
-				B8F9C9AB1A4C5F210017A97A /* SignInManageViewController.m */,
-				B802673D1A4EF65100D007E5 /* LoginViewController.h */,
-				B802673E1A4EF65100D007E5 /* LoginViewController.m */,
-				B802673A1A4EF63100D007E5 /* SignUpViewController.h */,
-				B802673B1A4EF63100D007E5 /* SignUpViewController.m */,
-				B8F9C9AD1A4C5F3A0017A97A /* RoutePlanViewController.h */,
-				B8F9C9AE1A4C5F3A0017A97A /* RoutePlanViewController.m */,
-				B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */,
-				B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */,
-				B80267441A4F02B700D007E5 /* EditMyInfoViewController.h */,
-				B80267451A4F02B700D007E5 /* EditMyInfoViewController.m */,
-				B89F27C31A4D4D8D00BAF523 /* ActivityPlanCell.h */,
-				B89F27C41A4D4D8D00BAF523 /* ActivityPlanCell.m */,
 				B80267181A4E4DF500D007E5 /* ActivityPlanCell.xib */,
-				B80267131A4E474C00D007E5 /* PlanModel.h */,
-				B80267141A4E474C00D007E5 /* PlanModel.m */,
 				B8F64C251A418E5200C8EAA7 /* Main.storyboard */,
 				B8F64C281A418E5200C8EAA7 /* Images.xcassets */,
 				B8F64C2A1A418E5200C8EAA7 /* LaunchScreen.xib */,
@@ -273,15 +438,7 @@
 		B8F64C461A4191F000C8EAA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B8F64C591A41939C00C8EAA7 /* 0.png */,
-				B8F64C481A4191FB00C8EAA7 /* 1.jpg */,
-				B8F64C471A4191FB00C8EAA7 /* 2.jpg */,
-				B8F64C5B1A41942C00C8EAA7 /* 3.jpg */,
-				B8F64C511A41923300C8EAA7 /* 4.jpg */,
-				B8F64C4F1A41922D00C8EAA7 /* 5.jpg */,
-				B8F64C4D1A41921B00C8EAA7 /* 6.png */,
-				B8F64C4B1A41921700C8EAA7 /* 7.jpg */,
-				B8F64C551A4192F600C8EAA7 /* 8.jpg */,
+				B80267CB1A50307900D007E5 /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -377,6 +534,7 @@
 				B80267231A4E66F200D007E5 /* navigation-bar-back-icon.png in Resources */,
 				B8F64C4C1A41921700C8EAA7 /* 7.jpg in Resources */,
 				B8F64C4A1A4191FB00C8EAA7 /* 1.jpg in Resources */,
+				B80267D11A50309C00D007E5 /* AMap.bundle in Resources */,
 				B8F64C501A41922D00C8EAA7 /* 5.jpg in Resources */,
 				B80267391A4EF07000D007E5 /* icn_locked@2x.png in Resources */,
 				B80267381A4EF07000D007E5 /* icn_locked.png in Resources */,
@@ -406,28 +564,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89F27C51A4D4D8D00BAF523 /* ActivityPlanCell.m in Sources */,
+				B80267D81A50316F00D007E5 /* BaseMapViewController.m in Sources */,
+				B80268141A5046DF00D007E5 /* NavigationViewController.m in Sources */,
 				B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */,
 				B802671C1A4E5C5200D007E5 /* ActivityDetailViewController.m in Sources */,
 				B80267461A4F02B700D007E5 /* EditMyInfoViewController.m in Sources */,
 				B80267151A4E474C00D007E5 /* PlanModel.m in Sources */,
 				B8F9C9A01A4C5EC80017A97A /* FundsApplyViewController.m in Sources */,
+				B80267FE1A50381300D007E5 /* TransitDetailViewController.m in Sources */,
 				B802673C1A4EF63100D007E5 /* SignUpViewController.m in Sources */,
 				B8F64C211A418E5200C8EAA7 /* AppDelegate.m in Sources */,
 				B8F9C9A31A4C5EE40017A97A /* AfterSaleServiceViewController.m in Sources */,
 				B8F9C9AC1A4C5F210017A97A /* SignInManageViewController.m in Sources */,
 				B802672A1A4E857400D007E5 /* CommonViewController.m in Sources */,
+				B80267F81A50375700D007E5 /* PathDetailViewController.m in Sources */,
 				B8F9C99D1A4C5EA00017A97A /* ClientManageViewController.m in Sources */,
 				B8F9C9A61A4C5EF50017A97A /* ActivityPlanViewController.m in Sources */,
 				B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */,
+				B80267EF1A50371200D007E5 /* CommonUtility.m in Sources */,
 				B89F27C21A4D341E00BAF523 /* NewClientViewController.m in Sources */,
 				B89F27BF1A4D175700BAF523 /* EditClientViewController.m in Sources */,
 				B87C8F641A4D52FE007F27B4 /* MasterViewController.m in Sources */,
+				B80267F51A50373A00D007E5 /* RouteDetailViewController.m in Sources */,
 				B802671F1A4E65ED00D007E5 /* CommonNavigationController.m in Sources */,
 				B802672D1A4E964500D007E5 /* NewActivityViewController.m in Sources */,
+				B80267FB1A5037E900D007E5 /* StepDetailViewController.m in Sources */,
 				B8F64C1E1A418E5200C8EAA7 /* main.m in Sources */,
+				B80268041A50383B00D007E5 /* WalkingDetailViewController.m in Sources */,
+				B80267CA1A502DDF00D007E5 /* NewFundsViewController.m in Sources */,
 				B8E6DDA01A4C62CF00B2DA07 /* MyInfoViewController.m in Sources */,
+				B802680A1A50386500D007E5 /* BusStopDetailViewController.m in Sources */,
 				B802673F1A4EF65100D007E5 /* LoginViewController.m in Sources */,
-				B8F9C9AF1A4C5F3A0017A97A /* RoutePlanViewController.m in Sources */,
+				B80268011A50382700D007E5 /* SegmentDetailViewController.m in Sources */,
+				B80267F21A50372C00D007E5 /* LineDashPolyline.m in Sources */,
+				B80268071A50384E00D007E5 /* BusLineDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,12 +720,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MobileSaleSystem/MAMap",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSaleSystem/MobileSaleSystem-Prefix.pch";
 				INFOPLIST_FILE = MobileSaleSystem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -564,12 +740,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MobileSaleSystem/MAMap",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MobileSaleSystem/MobileSaleSystem-Prefix.pch";
 				INFOPLIST_FILE = MobileSaleSystem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

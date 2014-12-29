@@ -7,10 +7,14 @@
 //
 
 #import "MasterViewController.h"
+#import "NavigationViewController.h"
 
 @interface MasterViewController ()
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
+@property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic, strong) AMapSearchAPI *search;
 
 @end
 
@@ -20,25 +24,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initMapView];
+    [self initSearch];
+    
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"MM-dd HH:mm"];
  
     self.dateLbl.text = [self.dateFormatter stringFromDate:[NSDate date]];
 }
 
+- (IBAction)onBtnToRoute:(id)sender {
+    NavigationViewController *navVC = [[NavigationViewController alloc] init];
+    navVC.mapView = self.mapView;
+    navVC.search = self.search;
+    [self.navigationController pushViewController:navVC animated:YES];
+}
+
+- (void)initMapView
+{
+    self.mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
+}
+
+/* 初始化search. */
+- (void)initSearch
+{
+    self.search = [[AMapSearchAPI alloc] initWithSearchKey:[MAMapServices sharedServices].apiKey Delegate:nil];
+}
+
+
 - (void)viewDidAppear:(BOOL)animated
 {
 //    [self performSegueWithIdentifier:@"toLogin" sender:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"toRoute"]) {
+//        
+//        NavigationViewController *navVC = segue.destinationViewController;
+//        navVC.mapView = self.mapView;
+//        navVC.search = self.search;
+//    }
+//}
 
 @end

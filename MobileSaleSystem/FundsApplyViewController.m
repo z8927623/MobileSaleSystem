@@ -42,7 +42,7 @@
 
 - (void)onBtnAdd:(id)sender
 {
-    
+    [self performSegueWithIdentifier:@"toNew" sender:nil];
 }
 
 /*

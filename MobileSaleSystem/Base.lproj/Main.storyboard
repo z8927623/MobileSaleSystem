@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAr-1w-9JT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2004" y="-1147"/>
+            <point key="canvasLocation" x="-2370" y="-1151"/>
         </scene>
         <!--移动销售管理系统-->
         <scene sceneID="ufC-wZ-h7g">
@@ -92,6 +92,15 @@
                                     <constraint firstAttribute="width" constant="60" id="m8z-PL-q9P"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客户管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-Wh-3Av">
+                                <rect key="frame" x="21" y="250" width="77" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="dmQ-bV-ACP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="经费申请" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohV-ND-hla">
                                 <rect key="frame" x="122" y="253" width="77" height="21"/>
                                 <constraints>
@@ -185,19 +194,6 @@
                                     <segue destination="qR9-Oh-PR5" kind="push" id="QH8-Ww-w7g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETW-gk-Jcd">
-                                <rect key="frame" x="29" y="401" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="QPf-WH-ZM3"/>
-                                    <constraint firstAttribute="height" constant="60" id="WQ1-P4-VQF"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="7.jpg">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="7JL-r9-nJo" kind="push" id="UAw-6n-nFn"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="杨耀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gml-MD-Tau">
                                 <rect key="frame" x="109" y="125" width="81" height="21"/>
                                 <constraints>
@@ -234,15 +230,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客户管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-Wh-3Av">
-                                <rect key="frame" x="21" y="250" width="77" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETW-gk-Jcd">
+                                <rect key="frame" x="29" y="401" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="dmQ-bV-ACP"/>
+                                    <constraint firstAttribute="width" constant="60" id="QPf-WH-ZM3"/>
+                                    <constraint firstAttribute="height" constant="60" id="WQ1-P4-VQF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" backgroundImage="7.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBtnToRoute:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rMC-oH-UQM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -312,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1582" y="-1136"/>
+            <point key="canvasLocation" x="-1946" y="-1120"/>
         </scene>
         <!--客户管理-->
         <scene sceneID="79v-Lp-XN4">
@@ -516,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsu-N5-hCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-854" y="-3944"/>
+            <point key="canvasLocation" x="-802" y="-3912"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hk5-3O-QTE">
@@ -724,6 +724,41 @@
             </objects>
             <point key="canvasLocation" x="-298" y="-3421"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l3K-CV-Frl">
+            <objects>
+                <navigationController id="Clr-7L-GQr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="daV-aa-luy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TmD-wh-me0" kind="relationship" relationship="rootViewController" id="X1S-rr-VO0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYt-9L-ieM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669" y="-2864"/>
+        </scene>
+        <!--申请经费-->
+        <scene sceneID="dy5-IN-Ea4">
+            <objects>
+                <viewController id="TmD-wh-me0" customClass="NewFundsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="44Y-Vt-gUx"/>
+                        <viewControllerLayoutGuide type="bottom" id="bhd-v3-KhL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e6D-CI-JzP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="申请经费" id="wzF-im-yWj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59V-P7-7zC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="-2846"/>
+        </scene>
         <!--经费申请-->
         <scene sceneID="kFx-fk-gZk">
             <objects>
@@ -738,10 +773,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="经费申请" id="W8N-AT-EXi"/>
+                    <connections>
+                        <segue destination="Clr-7L-GQr" kind="modal" identifier="toNew" id="XbV-GT-iw9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pop-ZE-3sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-466" y="-2358"/>
+            <point key="canvasLocation" x="-1082" y="-2774"/>
         </scene>
         <!--售后服务-->
         <scene sceneID="Wvu-Fi-w2p">
@@ -760,7 +798,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHy-5d-t5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="-2110"/>
+            <point key="canvasLocation" x="-319" y="-2005"/>
         </scene>
         <!--活动计划-->
         <scene sceneID="vW4-kZ-KT3">
@@ -824,7 +862,7 @@
         <!--路线规划-->
         <scene sceneID="7sx-ZK-gOT">
             <objects>
-                <viewController id="7JL-r9-nJo" customClass="RoutePlanViewController" sceneMemberID="viewController">
+                <viewController id="7JL-r9-nJo" customClass="NavigationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="huL-kq-FI2"/>
                         <viewControllerLayoutGuide type="bottom" id="gjH-Bc-cE5"/>
@@ -838,7 +876,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IFx-Uc-hpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1142" y="-153"/>
+            <point key="canvasLocation" x="-2340" y="-438"/>
         </scene>
         <!--修改计划-->
         <scene sceneID="j6n-Sd-46Q">

@@ -14,6 +14,26 @@
 
 @implementation AppDelegate
 
+- (void)configureAPIKey
+{
+    if ([APIKey length] == 0)
+    {
+#define kMALogTitle @"提示"
+#define kMALogContent @"apiKey为空，请检查key是否正确设置"
+        
+        NSString *log = [NSString stringWithFormat:@"[MAMapKit] %@", kMALogContent];
+        NSLog(@"%@", log);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kMALogTitle message:kMALogContent delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            
+            [alert show];
+        });
+    }
+    
+    [MAMapServices sharedServices].apiKey = (NSString *)APIKey;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -23,6 +43,8 @@
 //    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"navigation-bar-back-icon"]];
 //    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"navigation-bar-back-icon"]];
 //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
+    
+    [self configureAPIKey];
     
     return YES;
 }
