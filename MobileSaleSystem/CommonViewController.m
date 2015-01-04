@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     
     
-    if (self.needsBackItem) {
+//    if (self.needsBackItem) {
         // 1. 设置leftBarButtonItem，手势返回不可用，可以使用自定义push/pop动画
         
         // 1.1 使用系统UIBarButtonItem
@@ -48,7 +48,7 @@
         
         // 2. 设置backBarButtonItem，无法调整位置，但手势返回可用
         // 见AppDelegate
-    }
+//    }
 }
 
 - (void)onBtnBack:(id)sender

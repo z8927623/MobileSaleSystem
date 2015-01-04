@@ -10,4 +10,7 @@
 
 @interface NavigationViewController : BaseMapViewController
 
+@property (nonatomic, strong) UILabel *sourceLbl;
+@property (nonatomic, strong) UILabel *destinationLbl;
+
 @end

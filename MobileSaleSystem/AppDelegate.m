@@ -34,6 +34,22 @@
     [MAMapServices sharedServices].apiKey = (NSString *)APIKey;
 }
 
+// 修正高德在iOS8下无法定位的bug
+- (void)fixMAMapLocationOnIOS8
+{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
+    
+    [UIApplication sharedApplication].idleTimerDisabled = TRUE;
+    
+    _locationmanager = [[CLLocationManager alloc] init];
+    [_locationmanager requestAlwaysAuthorization];        //NSLocationAlwaysUsageDescription
+    [_locationmanager requestWhenInUseAuthorization];     //NSLocationWhenInUseDescription
+    _locationmanager.delegate = self;
+#else
+    
+#endif
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -45,6 +61,7 @@
 //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
     
     [self configureAPIKey];
+    [self fixMAMapLocationOnIOS8];
     
     return YES;
 }
