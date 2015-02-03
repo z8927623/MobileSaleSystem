@@ -42,7 +42,7 @@
 
 - (void)onBtnEdit:(id)sender
 {
-    [self performSegueWithIdentifier:@"toEdit" sender:nil];
+    [self performSegueWithIdentifier:@"toEditMine" sender:nil];
 }
 
 /*

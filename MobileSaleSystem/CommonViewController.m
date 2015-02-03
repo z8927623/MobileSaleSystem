@@ -16,8 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+
+    // 设置为非透明
+//    self.navigationController.navigationBar.translucent = NO;
     
 //    if (self.needsBackItem) {
         // 1. 设置leftBarButtonItem，手势返回不可用，可以使用自定义push/pop动画

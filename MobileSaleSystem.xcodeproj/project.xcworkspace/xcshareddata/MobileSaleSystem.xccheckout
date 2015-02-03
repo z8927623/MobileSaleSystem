@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E7255714-AAB7-4411-945F-652E46CC4252</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MobileSaleSystem</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>43A1C78458504368DFD36487E60FE326346BE27E</key>
+		<string>https://github.com/z8927623/MobileSaleSystem.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MobileSaleSystem.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>43A1C78458504368DFD36487E60FE326346BE27E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/z8927623/MobileSaleSystem.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>43A1C78458504368DFD36487E60FE326346BE27E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>43A1C78458504368DFD36487E60FE326346BE27E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MobileSaleSystem</string>
+		</dict>
+	</array>
+</dict>
+</plist>

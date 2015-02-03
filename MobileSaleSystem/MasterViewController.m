@@ -34,10 +34,17 @@
 }
 
 - (IBAction)onBtnToRoute:(id)sender {
-    NavigationViewController *navVC = [[NavigationViewController alloc] init];
-    navVC.mapView = self.mapView;
-    navVC.search = self.search;
-    [self.navigationController pushViewController:navVC animated:YES];
+//    NavigationViewController *navVC = [[NavigationViewController alloc] init];
+//    navVC.mapView = self.mapView;
+//    navVC.search = self.search;
+//    [self.navigationController pushViewController:navVC animated:YES];
+    
+//    NavigationViewController *navVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationViewController"];
+//    navVC.mapView = self.mapView;
+//    navVC.search = self.search;
+//    [self.navigationController pushViewController:navVC animated:YES];
+    
+//    [self performSegueWithIdentifier:@"toNav" sender:nil];
 }
 
 - (void)initMapView
@@ -57,14 +64,13 @@
 //    [self performSegueWithIdentifier:@"toLogin" sender:nil];
 }
 
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"toRoute"]) {
-//        
-//        NavigationViewController *navVC = segue.destinationViewController;
-//        navVC.mapView = self.mapView;
-//        navVC.search = self.search;
-//    }
-//}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toNav"]) {
+        NavigationViewController *navVC = segue.destinationViewController;
+        navVC.mapView = self.mapView;
+        navVC.search = self.search;
+    }
+}
 
 @end

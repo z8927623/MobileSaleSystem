@@ -62,8 +62,7 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 - (id)init
 {
     if (self = [super init]) {
-        self.startCoordinate        = CLLocationCoordinate2DMake(39.910267, 116.370888);
-        self.destinationCoordinate  = CLLocationCoordinate2DMake(39.989872, 116.481956);
+
     }
     
     return self;
@@ -80,22 +79,23 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 {
     [super viewDidLoad];
     
-//    [self initNavigationBar];
-//    
-//    [self initToolBar];
-//    
-////    [self addDefaultAnnotations];
-//    
-//    [self updateCourseUI];
-//    
-//    [self updateDetailUI];
-//    
-//    [self initNavigationTitle:@"路线规划"];
+    [self initConfiguration];
+    
+    [self initNavigationBar];
+    
+    [self initToolBar];
+    
+    [self updateCourseUI];
+    
+    [self updateDetailUI];
+    
+    [self initNavigationTitle:@"路线规划"];
     
     [self initSearchBar];
     [self initSearchDisplay];
+
     
-    [self initUI];
+//    [self initUI];
     
 //    [self startLocation];
 }
@@ -104,17 +104,28 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setToolbarHidden:NO animated:animated];
+    self.navigationController.navigationBar.translucent = NO;
+//    [self.navigationController setToolbarHidden:NO animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
-    [self.navigationController setToolbarHidden:YES animated:animated];
+    self.navigationController.navigationBar.translucent = YES;
+//    [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
 #pragma mark - Initialization
+
+- (void)initConfiguration
+{
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    self.startCoordinate        = CLLocationCoordinate2DMake(39.910267, 116.370888);
+    self.destinationCoordinate  = CLLocationCoordinate2DMake(39.989872, 116.481956);
+    self.tips = [NSMutableArray array];
+}
 
 - (void)initNavigationBar
 {
@@ -159,34 +170,13 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     self.toolbarItems = [NSArray arrayWithObjects:flexbleItem, searchTypeItem, flexbleItem, previousItem, flexbleItem, nextItem, flexbleItem, nil];
 }
 
-//- (void)initSearchBar
-//{
-//    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44)];
-//    self.searchBar.barStyle     = UIBarStyleBlack;
-//    self.searchBar.translucent  = YES;
-//    self.searchBar.delegate     = self;
-//    self.searchBar.placeholder  = GeoPlaceHolder;
-//    self.searchBar.keyboardType = UIKeyboardTypeDefault;
-//    
-//    [self.view addSubview:self.searchBar];
-//}
-//
-//- (void)initSearchDisplay
-//{
-//    self.displayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-//    self.displayController.delegate                = self;
-//    self.displayController.searchResultsDataSource = self;
-//    self.displayController.searchResultsDelegate   = self;
-//}
-
 - (void)initSearchBar
 {
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20+44, CGRectGetWidth(self.view.bounds), 44)];
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 44)];
     self.searchBar.barStyle = UIBarStyleDefault;
     self.searchBar.delegate = self;
     self.searchBar.placeholder = @"搜索地点";
     self.searchBar.keyboardType = UIKeyboardTypeDefault;
-    
     [self.view addSubview:self.searchBar];
 }
 
@@ -244,22 +234,6 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     self.navigationItem.rightBarButtonItem.enabled = self.route != nil;
 }
 
-//- (void)addDefaultAnnotations
-//{
-//    MAPointAnnotation *startAnnotation = [[MAPointAnnotation alloc] init];
-//    startAnnotation.coordinate = self.startCoordinate;
-//    startAnnotation.title      = (NSString*)NavigationViewControllerStartTitle;
-//    startAnnotation.subtitle   = [NSString stringWithFormat:@"{%f, %f}", self.startCoordinate.latitude, self.startCoordinate.longitude];
-//
-//    MAPointAnnotation *destinationAnnotation = [[MAPointAnnotation alloc] init];
-//    destinationAnnotation.coordinate = self.destinationCoordinate;
-//    destinationAnnotation.title      = (NSString*)NavigationViewControllerDestinationTitle;
-//    destinationAnnotation.subtitle   = [NSString stringWithFormat:@"{%f, %f}", self.destinationCoordinate.latitude, self.destinationCoordinate.longitude];
-//
-//    [self.mapView addAnnotation:startAnnotation];
-//    [self.mapView addAnnotation:destinationAnnotation];
-//}
-
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -268,7 +242,7 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     
     // 清除annotation并且进行地理搜索
     [self clearAndSearchGeocodeWithKey:key];
-    
+     // 收回键盘
     [self.displayController setActive:NO animated:NO];
     
     self.searchBar.placeholder = key;
@@ -492,6 +466,7 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     // 清除annotation并且进行地理搜索
     [self clearAndSearchGeocodeWithKey:tip.name];
     
+    // 收回键盘
     [self.displayController setActive:NO animated:NO];
     
     self.searchBar.placeholder = tip.name;

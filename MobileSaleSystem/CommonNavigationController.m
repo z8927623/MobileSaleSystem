@@ -20,6 +20,8 @@
     
     // iOS8 only
 //    self.hidesBarsOnSwipe = YES;
+    
+//    self.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {
