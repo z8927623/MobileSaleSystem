@@ -13,4 +13,7 @@
 @property (nonatomic, strong) UILabel *sourceLbl;
 @property (nonatomic, strong) UILabel *destinationLbl;
 
+@property (nonatomic, strong) UILabel *sourceSiteLbl;
+@property (nonatomic, strong) UILabel *destinationSiteLbl;
+
 @end

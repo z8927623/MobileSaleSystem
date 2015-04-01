@@ -11,6 +11,9 @@
 #import "CommonUtility.h"
 #import "LineDashPolyline.h"
 #import "GeocodeAnnotation.h"
+#import "GeoDetailViewController.h"
+#import "ReGeocodeAnnotation.h"
+#import "CusAnnotationView.h"
 
 const NSString *NavigationViewControllerStartTitle       = @"起点";
 const NSString *NavigationViewControllerDestinationTitle = @"终点";
@@ -38,6 +41,12 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 @property (nonatomic) CLLocationCoordinate2D startCoordinate;
 // 终点经纬度.
 @property (nonatomic) CLLocationCoordinate2D destinationCoordinate;
+
+@property (nonatomic, strong) CusAnnotationView *annotationView;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
+
+@property (nonatomic, assign) CGPoint annotationPoint;
 
 @end
 
@@ -71,7 +80,8 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 - (void)startLocation
 {
     self.mapView.customizeUserLocationAccuracyCircleRepresentation = YES;
-    
+//    self.mapView.userTrackingMode = MAUserTrackingModeNone;
+    self.mapView.showsUserLocation = YES;
     self.mapView.userTrackingMode = MAUserTrackingModeFollow;
 }
 
@@ -94,10 +104,15 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     [self initSearchBar];
     [self initSearchDisplay];
 
+    [self initSourceDestinationBtn];
     
-//    [self initUI];
+    [self startLocation];
     
-//    [self startLocation];
+    [self initGestureRecognizer];
+}
+
+- (void)dealloc {
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -105,7 +120,7 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBar.translucent = NO;
-//    [self.navigationController setToolbarHidden:NO animated:animated];
+    [self.navigationController setToolbarHidden:NO animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -113,10 +128,41 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     [super viewWillDisappear:animated];
     
     self.navigationController.navigationBar.translucent = YES;
-//    [self.navigationController setToolbarHidden:YES animated:animated];
+    [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
 #pragma mark - Initialization
+
+- (void)initGestureRecognizer
+{
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+    [self.mapView addGestureRecognizer:self.tap];
+}
+
+- (void)handleTapGesture:(UITapGestureRecognizer *)tapGesture
+{
+    [SVProgressHUD showHUDWithImage:nil status:@"请稍候" duration:-1];
+    
+    // 关闭定位功能
+    self.mapView.showsUserLocation = NO;
+    self.mapView.customizeUserLocationAccuracyCircleRepresentation = NO;
+    self.mapView.userTrackingMode = MAUserTrackingModeNone;
+
+    
+    // 获取触摸点坐标
+    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:[tapGesture locationInView:self.mapView] toCoordinateFromView:self.mapView];
+    
+    // 记住点击的点的位置
+    self.annotationPoint = CGPointMake(coordinate.latitude, coordinate.longitude);
+    
+    // 先清除之前的
+    [self clearSearch];
+    // 初始化搜索
+    [self initSearch];
+    
+    // 搜索位置
+    [self searchReGeocodeWithCoordinate:coordinate];
+}
 
 - (void)initConfiguration
 {
@@ -125,6 +171,12 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     self.startCoordinate        = CLLocationCoordinate2DMake(39.910267, 116.370888);
     self.destinationCoordinate  = CLLocationCoordinate2DMake(39.989872, 116.481956);
     self.tips = [NSMutableArray array];
+}
+
+- (void)initSearch
+{
+    self.search = [[AMapSearchAPI alloc] initWithSearchKey:[MAMapServices sharedServices].apiKey Delegate:nil];
+    self.search.delegate = self;
 }
 
 - (void)initNavigationBar
@@ -193,29 +245,62 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
     self.navigationItem.title = title;
 }
 
-- (void)initUI
+- (void)initSourceDestinationBtn
 {
-    self.sourceLbl = [[UILabel alloc] initWithFrame:CGRectMake(20, self.searchBar.frame.origin.y+self.searchBar.frame.size.height+10, self.view.frame.size.width-40, 40)];
+    UIView *bgView1 = [[UIView alloc] initWithFrame:CGRectMake(20, self.searchBar.frame.origin.y+self.searchBar.frame.size.height+10, self.view.frame.size.width-40, 40)];
+    bgView1.backgroundColor = [UIColor whiteColor];
+    bgView1.layer.cornerRadius = 5;
+    bgView1.layer.borderColor = [[UIColor blackColor] CGColor];
+    bgView1.layer.borderWidth = 1;
+    [self.view addSubview:bgView1];
+    
+    self.sourceLbl = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 0, 0)];
     self.sourceLbl.backgroundColor = [UIColor whiteColor];
-    self.sourceLbl.text = @"起点";
-    self.sourceLbl.font = [UIFont boldSystemFontOfSize:22];
-    [self.view addSubview:self.sourceLbl];
+    self.sourceLbl.text = @"起点：";
+    self.sourceLbl.font = [UIFont boldSystemFontOfSize:20];
+    [self.sourceLbl sizeToFit];
+    self.sourceLbl.centerY = bgView1.height/2;
+    [bgView1 addSubview:self.sourceLbl];
+    
+    self.sourceSiteLbl = [[UILabel alloc] initWithFrame:CGRectMake(_sourceLbl.right-5, 0, bgView1.width-_sourceLbl.right-10, bgView1.height)];
+    self.sourceSiteLbl.backgroundColor = [UIColor whiteColor];
+    self.sourceSiteLbl.text = @"";
+    self.sourceSiteLbl.font = [UIFont systemFontOfSize:13];
+    self.sourceSiteLbl.centerY = bgView1.height/2;
+    [bgView1 addSubview:self.sourceSiteLbl];
     
     UIButton *sourceBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [sourceBtn setFrame:self.sourceLbl.frame];
+    [sourceBtn setFrame:bgView1.bounds];
     [sourceBtn addTarget:self action:@selector(onBtnSource:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sourceBtn];
+    [bgView1 addSubview:sourceBtn];
     
-    self.destinationLbl = [[UILabel alloc] initWithFrame:CGRectMake(self.sourceLbl.frame.origin.x, self.sourceLbl.frame.origin.y+self.sourceLbl.frame.size.height+10, self.sourceLbl.frame.size.width, self.sourceLbl.frame.size.height)];
+    UIView *bgView2 = [[UIView alloc] initWithFrame:CGRectMake(bgView1.left, bgView1.bottom+10, bgView1.width, bgView1.height)];
+    bgView2.backgroundColor = [UIColor whiteColor];
+    bgView2.layer.cornerRadius = 5;
+    bgView2.layer.borderColor = [[UIColor blackColor] CGColor];
+    bgView2.layer.borderWidth = 1;
+    [self.view addSubview:bgView2];
+    
+    self.destinationLbl = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 0, 0)];
     self.destinationLbl.backgroundColor = [UIColor whiteColor];
-    self.destinationLbl.text = @"终点";
+    self.destinationLbl.text = @"终点：";
     self.destinationLbl.font = self.sourceLbl.font;
-    [self.view addSubview:self.destinationLbl];
+    [self.destinationLbl sizeToFit];
+    self.destinationLbl.centerY = bgView2.height/2;
+    [bgView2 addSubview:self.destinationLbl];
+    
+    self.destinationSiteLbl = [[UILabel alloc] initWithFrame:CGRectMake(_destinationSiteLbl.right-5, 0, bgView2.width-_destinationLbl.right-10, bgView2.height)];
+    self.destinationSiteLbl.backgroundColor = [UIColor whiteColor];
+    self.destinationSiteLbl.text = @"";
+    self.destinationSiteLbl.font = [UIFont systemFontOfSize:17];
+    [self.destinationSiteLbl sizeToFit];
+    self.destinationSiteLbl.centerY = bgView1.height/2;
+    [bgView1 addSubview:self.destinationSiteLbl];
     
     UIButton *destinationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [destinationBtn setFrame:self.destinationLbl.frame];
+    [destinationBtn setFrame:bgView2.bounds];
     [destinationBtn addTarget:self action:@selector(onBtnDestination:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:destinationBtn];
+    [bgView2 addSubview:destinationBtn];
 }
 
 // 更新"上一个", "下一个"按钮状态.
@@ -295,6 +380,34 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
+//    if ([annotation isKindOfClass:[MAPointAnnotation class]])
+//    {
+        static NSString *customReuseIndetifier = @"customReuseIndetifier";
+        
+        CusAnnotationView *annotationView = (CusAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:customReuseIndetifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[CusAnnotationView alloc] initWithAnnotation:annotation
+                                                           reuseIdentifier:customReuseIndetifier];
+        }
+        
+        // must set to NO, so we can show the custom callout view.
+        annotationView.canShowCallout   = NO;
+        annotationView.draggable        = YES;
+        annotationView.calloutOffset    = CGPointMake(0, -5);
+        
+        annotationView.portrait         = [UIImage imageNamed:@"place_04"];
+        annotationView.calloutText             = self.sourceSiteLbl.text;
+    
+        self.annotationView = annotationView;
+        self.userLocationAnnotationView = annotationView;
+    
+        return annotationView;
+//    }
+    
+//    return nil;
+    
+    /*
     if ([annotation isKindOfClass:[MAPointAnnotation class]]) {
         
         static NSString *navigationCellIdentifier = @"navigationCellIdentifier";
@@ -349,14 +462,24 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
         return poiAnnotationView;
     }
     
-    return nil;
+    return nil;*/
+}
+
+- (void)gotoDetailForGeocode:(AMapGeocode *)geocode
+{
+    if (geocode != nil) {
+        GeoDetailViewController *geoDetailViewController = [[GeoDetailViewController alloc] init];
+        geoDetailViewController.geocode = geocode;
+        
+        [self.navigationController pushViewController:geoDetailViewController animated:YES];
+    }
 }
 
 // callout点击操作
 - (void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     if ([view.annotation isKindOfClass:[GeocodeAnnotation class]]) {
-        //        [self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
+        [self gotoDetailForGeocode:[(GeocodeAnnotation*)view.annotation geocode]];
     }
 }
 
@@ -364,12 +487,44 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
     if (!updatingLocation && self.userLocationAnnotationView != nil) {
-        
+    
         [UIView animateWithDuration:0.1 animations:^{
-            double degree = userLocation.heading.trueHeading - self.mapView.rotationDegree;
-            self.userLocationAnnotationView.transform = CGAffineTransformMakeRotation(degree * M_PI / 180.f );
+//            double degree = userLocation.heading.trueHeading - self.mapView.rotationDegree;
+//            self.userLocationAnnotationView.transform = CGAffineTransformMakeRotation(degree * M_PI / 180.f );
             
+            // 记下第一次定位的点的位置
+            self.annotationPoint = CGPointMake(mapView.userLocation.location.coordinate.latitude, mapView.userLocation.location.coordinate.longitude);
+            
+            // 搜索位置
+            [self searchReGeocodeWithCoordinate:CLLocationCoordinate2DMake(self.annotationPoint.x, self.annotationPoint.y)];
+        
         }];
+    }
+}
+
+/* 逆地理编码 搜索. */
+- (void)searchReGeocodeWithCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    AMapReGeocodeSearchRequest *regeo = [[AMapReGeocodeSearchRequest alloc] init];
+    
+    regeo.location = [AMapGeoPoint locationWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    regeo.requireExtension = YES;
+    
+    [self.search AMapReGoecodeSearch:regeo];
+}
+
+
+#pragma mark - AMapSearchDelegate
+
+/* 逆地理编码回调. */
+- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response
+{
+    if (response.regeocode != nil) {
+        
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(request.location.latitude, request.location.longitude);
+        ReGeocodeAnnotation *reGeocodeAnnotation = [[ReGeocodeAnnotation alloc] initWithCoordinate:coordinate reGeocode:response.regeocode];
+        self.sourceSiteLbl.text = reGeocodeAnnotation.reGeocode.formattedAddress;
+        self.annotationView.calloutText             = self.sourceSiteLbl.text;
     }
 }
 
@@ -756,13 +911,13 @@ const NSString *NavigationViewControllerDestinationTitle = @"终点";
 
 - (void)onBtnSource:(id)sender
 {
-    
+    self.searchBar.placeholder = @"设置起点";
 }
 
 
 - (void)onBtnDestination:(id)sender
 {
-    
+    self.searchBar.placeholder = @"设置终点";
 }
 
 @end

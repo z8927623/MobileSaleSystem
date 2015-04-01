@@ -119,6 +119,11 @@
 		B8A18EF11AC2F1CC00D10A54 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A18EF01AC2F1CC00D10A54 /* HTTPManager.m */; };
 		B8A18EF41AC3009200D10A54 /* SignInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A18EF31AC3009200D10A54 /* SignInCell.m */; };
 		B8A18EF71AC3018000D10A54 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A18EF61AC3018000D10A54 /* UIView+Utils.m */; };
+		B8BB001B1ACB97CA00F81575 /* GeoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BB001A1ACB97CA00F81575 /* GeoDetailViewController.m */; };
+		B8BB002A1ACBF4D800F81575 /* ReGeocodeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BB00291ACBF4D800F81575 /* ReGeocodeAnnotation.m */; };
+		B8BB002D1ACC0D2C00F81575 /* CusAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BB002C1ACC0D2C00F81575 /* CusAnnotationView.m */; };
+		B8BB00301ACC0D4900F81575 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BB002F1ACC0D4900F81575 /* CustomCalloutView.m */; };
+		B8BB00321ACC0E4C00F81575 /* place_04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8BB00311ACC0E4C00F81575 /* place_04@2x.png */; };
 		B8E6DDA01A4C62CF00B2DA07 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */; };
 		B8E6F0AA1ACAF91400B3D225 /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6F0A91ACAF91400B3D225 /* NSString+Tools.m */; };
 		B8E6F0AD1ACAF9CB00B3D225 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = B8E6F0AC1ACAF9CB00B3D225 /* pinyin.c */; };
@@ -319,6 +324,15 @@
 		B8A18EF31AC3009200D10A54 /* SignInCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInCell.m; sourceTree = "<group>"; };
 		B8A18EF51AC3018000D10A54 /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
 		B8A18EF61AC3018000D10A54 /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		B8BB00191ACB97CA00F81575 /* GeoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoDetailViewController.h; sourceTree = "<group>"; };
+		B8BB001A1ACB97CA00F81575 /* GeoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoDetailViewController.m; sourceTree = "<group>"; };
+		B8BB00281ACBF4D800F81575 /* ReGeocodeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReGeocodeAnnotation.h; sourceTree = "<group>"; };
+		B8BB00291ACBF4D800F81575 /* ReGeocodeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReGeocodeAnnotation.m; sourceTree = "<group>"; };
+		B8BB002B1ACC0D2C00F81575 /* CusAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusAnnotationView.h; sourceTree = "<group>"; };
+		B8BB002C1ACC0D2C00F81575 /* CusAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusAnnotationView.m; sourceTree = "<group>"; };
+		B8BB002E1ACC0D4900F81575 /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
+		B8BB002F1ACC0D4900F81575 /* CustomCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalloutView.m; sourceTree = "<group>"; };
+		B8BB00311ACC0E4C00F81575 /* place_04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "place_04@2x.png"; path = "../place_04@2x.png"; sourceTree = "<group>"; };
 		B8BC7C3F1ABD0AD700E39D9C /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		B8E6DD9E1A4C62CF00B2DA07 /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
 		B8E6DD9F1A4C62CF00B2DA07 /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
@@ -500,12 +514,20 @@
 				B80268061A50384E00D007E5 /* BusLineDetailViewController.m */,
 				B80268081A50386500D007E5 /* BusStopDetailViewController.h */,
 				B80268091A50386500D007E5 /* BusStopDetailViewController.m */,
+				B8BB00191ACB97CA00F81575 /* GeoDetailViewController.h */,
+				B8BB001A1ACB97CA00F81575 /* GeoDetailViewController.m */,
 				B80267ED1A50371200D007E5 /* CommonUtility.h */,
 				B80267EE1A50371200D007E5 /* CommonUtility.m */,
 				B80267F01A50372C00D007E5 /* LineDashPolyline.h */,
 				B80267F11A50372C00D007E5 /* LineDashPolyline.m */,
 				B80303EB1A583DFB003FA2F3 /* GeocodeAnnotation.h */,
 				B80303EC1A583DFB003FA2F3 /* GeocodeAnnotation.m */,
+				B8BB00281ACBF4D800F81575 /* ReGeocodeAnnotation.h */,
+				B8BB00291ACBF4D800F81575 /* ReGeocodeAnnotation.m */,
+				B8BB002B1ACC0D2C00F81575 /* CusAnnotationView.h */,
+				B8BB002C1ACC0D2C00F81575 /* CusAnnotationView.m */,
+				B8BB002E1ACC0D4900F81575 /* CustomCalloutView.h */,
+				B8BB002F1ACC0D4900F81575 /* CustomCalloutView.m */,
 				B80267EC1A50349300D007E5 /* APIKey.h */,
 			);
 			name = Map;
@@ -525,6 +547,7 @@
 		B80303961A583660003FA2F3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B8BB00311ACC0E4C00F81575 /* place_04@2x.png */,
 				B895C9671ABFC69A009F1828 /* right_arrow@2x.png */,
 				B895C9681ABFC69A009F1828 /* right_arrow.png */,
 				B895C9691ABFC69A009F1828 /* left_arrow@2x.png */,
@@ -832,6 +855,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B895C96D1ABFC69A009F1828 /* left_arrow@2x.png in Resources */,
+				B8BB00321ACC0E4C00F81575 /* place_04@2x.png in Resources */,
 				B80303C81A583660003FA2F3 /* 5.jpg in Resources */,
 				B80303C61A583660003FA2F3 /* 3.jpg in Resources */,
 				B80303C31A583660003FA2F3 /* 0.png in Resources */,
@@ -903,8 +927,10 @@
 				B80267D81A50316F00D007E5 /* BaseMapViewController.m in Sources */,
 				B825E2FE1ACAEB8800B65B6F /* YYDatePicker.m in Sources */,
 				B80268141A5046DF00D007E5 /* NavigationViewController.m in Sources */,
+				B8BB002D1ACC0D2C00F81575 /* CusAnnotationView.m in Sources */,
 				B8A18EE91AC2F01200D10A54 /* AFURLConnectionOperation.m in Sources */,
 				B8F9C9A91A4C5F060017A97A /* RecordManageViewController.m in Sources */,
+				B8BB001B1ACB97CA00F81575 /* GeoDetailViewController.m in Sources */,
 				B802671C1A4E5C5200D007E5 /* ActivityDetailViewController.m in Sources */,
 				B825E3041ACAEEF200B65B6F /* NewRecordViewController.m in Sources */,
 				B80267461A4F02B700D007E5 /* EditMyInfoViewController.m in Sources */,
@@ -932,6 +958,7 @@
 				B8A18EE81AC2F01200D10A54 /* AFPropertyListRequestOperation.m in Sources */,
 				B89F27B91A4D0F3800BAF523 /* ClientDetailViewController.m in Sources */,
 				B80267EF1A50371200D007E5 /* CommonUtility.m in Sources */,
+				B8BB00301ACC0D4900F81575 /* CustomCalloutView.m in Sources */,
 				B8A18EEE1AC2F03600D10A54 /* HTTPClient.m in Sources */,
 				B821D3851ABF0BFD000A3F55 /* RecordDetailViewController.m in Sources */,
 				B89F27C21A4D341E00BAF523 /* NewClientViewController.m in Sources */,
@@ -957,6 +984,7 @@
 				B80267F21A50372C00D007E5 /* LineDashPolyline.m in Sources */,
 				B895C97F1ABFC85D009F1828 /* DCIntrospect.m in Sources */,
 				B80268071A50384E00D007E5 /* BusLineDetailViewController.m in Sources */,
+				B8BB002A1ACBF4D800F81575 /* ReGeocodeAnnotation.m in Sources */,
 				B895C93C1ABFB3B7009F1828 /* NewSigninViewController.m in Sources */,
 				B8A18EE71AC2F01200D10A54 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B80303ED1A583DFB003FA2F3 /* GeocodeAnnotation.m in Sources */,

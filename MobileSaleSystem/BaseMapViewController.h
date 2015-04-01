@@ -15,4 +15,6 @@
 @property (nonatomic, strong) MAMapView *mapView;
 @property (nonatomic, strong) AMapSearchAPI *search;
 
+- (void)clearMapView;
+- (void)clearSearch;
 @end
