@@ -9,8 +9,6 @@
 #import "HTTPClient.h"
 #import "AFJSONRequestOperation.h"
 
-#define Base_Url @"http://117.149.6.196:8080"
-
 @implementation HTTPClient
 
 + (HTTPClient *)sharedClient

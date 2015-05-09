@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewSigninViewController : UIViewController
+@interface NewSigninViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) UILabel *lbl;
 @property (nonatomic, strong) UILabel *addressLbl;
 @property (nonatomic, strong) UITextField *field;
+@property(nonatomic, strong) CLLocationManager *locationManager;
 
 @end

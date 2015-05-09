@@ -219,7 +219,7 @@
 {
     [super viewDidLoad];
     
-    [self initTitle:@"导航方案 (AMapRoute)"];
+    [self initTitle:@"导航方案"];
     
     [self initTableView];
 }

@@ -51,6 +51,37 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(dismiss)];
     [self.view addGestureRecognizer:tap];
+    
+    
+    if (!self.forManager) {
+        self.navigationItem.title = @"编辑客户信息";
+    } else {
+        self.navigationItem.title = @"编辑销售员信息";
+    }
+    
+    
+    if (!self.forManager) {
+        self.nameField.text = self.dic[@"name"];
+        self.phoneField.text = self.dic[@"linkPhone"];
+        self.emailField.text = self.dic[@"email"];
+        self.genderField.text = self.dic[@"sex"];
+        self.ageField.text = self.dic[@"age"];
+        self.addressField.text = self.dic[@"address"];
+    } else {
+        self.nameField.text = self.dic[@"nickName"];
+        self.phoneField.text = self.dic[@"linkPhone"];
+        self.emailField.text = self.dic[@"email"];
+        self.genderField.text = self.dic[@"sex"];
+        self.ageField.text = self.dic[@"age"];
+        self.addressField.text = self.dic[@"address"];
+    }
+       
+    if ([self.dic[@"headPic"] isKindOfClass:[UIImage class]]) {
+        self.avatarImage.image = self.dic[@"headPic"];
+    } else {
+        NSString *urlString = [NSString stringWithFormat:@"%@%@", Base_Url , [self.dic[@"headPic"] substringFromIndex:1]];
+        [self.avatarImage setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"0.png"]];
+    }
 }
 
 - (void)dismiss
@@ -65,7 +96,66 @@
 
 - (void)onBtnSave:(id)sender
 {
-
+    [self.view endEditing:YES];
+    
+    [SVProgressHUD showProgress];
+    
+    if (!self.forManager) {
+        [HTTPManager editClientInfoWithUserId:nil clientId:self.dic[@"id"] name:self.nameField.text age:self.ageField.text phone:self.phoneField.text sex:self.genderField.text address:self.addressField.text email:self.emailField.text headPic:nil completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+            NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+            NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+            if ([result_code isEqualToString:@"0"]) {
+                [SVProgressHUD dismiss];
+                [self.dic setObject:self.nameField.text forKey:@"name"];
+                [self.dic setObject:self.phoneField.text forKey:@"linkPhone"];
+                [self.dic setObject:self.emailField.text forKey:@"email"];
+                [self.dic setObject:self.genderField.text forKey:@"sex"];
+                [self.dic setObject:self.ageField.text forKey:@"age"];
+                [self.dic setObject:self.addressField.text forKey:@"address"];
+//                [self.dic setObject:self.chosenImage forKey:@"headPic"];
+                [self.navigationController popViewControllerAnimated:YES];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:Noti1 object:nil];
+                
+            } else {
+                [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+            }
+        } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+            NSLog(@"err: %@", error);
+        }];
+    } else {
+        [HTTPManager editUserInfoWithUserId:_dic[@"id"] name:self.nameField.text age:self.ageField.text phone:self.phoneField.text sex:self.genderField.text address:self.addressField.text email:self.emailField.text headPic:[UIImageJPEGRepresentation(self.chosenImage, 0.1) base64Encoding] completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+            NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+            NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+            if ([result_code isEqualToString:@"0"]) {
+                [SVProgressHUD dismiss];
+                
+                [self.dic setObject:self.nameField.text forKey:@"nickName"];
+                [self.dic setObject:self.phoneField.text forKey:@"linkPhone"];
+                [self.dic setObject:self.emailField.text forKey:@"email"];
+                [self.dic setObject:self.genderField.text forKey:@"sex"];
+                [self.dic setObject:self.ageField.text forKey:@"age"];
+                [self.dic setObject:self.addressField.text forKey:@"address"];
+                [self.navigationController popViewControllerAnimated:YES];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:Noti1 object:nil];
+                
+                [[NSUserDefaults standardUserDefaults] setObject:self.nameField.text forKey:UserNameKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
+            } else {
+                [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+            }
+        } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+            NSLog(@"err: %@", error);
+        }];
+    }
 }
 
 - (IBAction)onBtnChooseImage:(id)sender {
@@ -218,6 +308,30 @@
     }
 }
 
+- (void)uploadAvatar:(NSString *)avatar ID:(NSNumber *)ID type:(int)type
+{
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager uploadAvatar:avatar ID:ID type:type completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD showHUDWithImage:nil status:@"成功" duration:TimeInterval];
+            
+            [self.dic setObject:self.chosenImage forKey:@"headPic"];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:NotiAvatar object:nil];
+            
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+    }];
+}
 
 #pragma mark - UIImagePickerController delegate methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -227,7 +341,11 @@
     self.chosenImage = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:^{
-//        [self uploadAvatar];
+        
+        int type = self.forManager ? 0 : 1;
+        [self uploadAvatar:[UIImageJPEGRepresentation(self.chosenImage, 0.1) base64Encoding] ID:self.dic[@"id"] type:type];
+        
+        self.avatarImage.image = chosenImage;
     }];
 }
 

@@ -163,7 +163,7 @@
 {
     [super viewDidLoad];
     
-    [self initTitle:@"公交方案 (AMapTransit)"];
+    [self initTitle:@"公交方案"];
     
     [self initTableView];
 }

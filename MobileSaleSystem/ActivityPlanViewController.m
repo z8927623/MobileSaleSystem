@@ -14,6 +14,8 @@
 
 @interface ActivityPlanViewController ()
 
+@property (nonatomic, strong) NSMutableArray *dataArr;
+
 @end
 
 @implementation ActivityPlanViewController
@@ -40,37 +42,128 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.dataArr = [NSMutableArray array];
+    
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onBtnAdd:)];
     self.navigationItem.rightBarButtonItem = rightItem;
-    
-    NSArray *array = [NSArray arrayWithObjects:@"i简单；十几分i；骚减肥；熬倒计时v哦朋；撒酒疯静安寺；放假啊是【发技术总监jjdsfijadifoyoiwyoweoayr7yohkfjskf",
-                      @"即将二分i傲娇",
-                      @"lfijfjepafj",
-                      @"ijd;oaf[I0[Q",
-                      @"down vote lt for a given SDK or deployment target. For exa",
-                      @"SEI放假哦啊见附件地方【安家费【ap9isfd[a9啊【死放大【啊大宋见附件地；v静安寺大劫案【哦几放大放假啊【非jsidfjasjidfpaisdfjwp8ruwqpfj",
-                      @"dsfasdofoasfasdfdas",
-                      @"【春兰杯古力屠龙胜韩国金志锡 中国提前夺冠】http://t.cn/RZzydsc 第十届春兰杯半决赛刚刚结束一场，不久前十番棋失利的古力以围棋中最为酣畅淋漓的屠龙方式击败韩国金志锡，中国包揽冠亚军。韩国二号棋手金志锡近期首夺三星杯以及进入LG杯决赛，期间击败中国多位年轻世界冠军，终于倒在了古力面前。"
-                      @""
-                      @"i建瓯就打算激动啥金佛就是IE剪发",
-                      @"尼泊尔和孟加拉国都是中国传统友好邻邦。明年是中尼建交60周年，也是中孟建交40周年。中方期待通过此访推动落实中尼、中孟两国领导人重要共识，规划明年建交纪念活动，拓展双方在经贸、互联互通、人文等领域合作，推进中尼、中孟关系进一步发展。问美韩日三方将签订一项防卫情报备忘录，共享有关朝鲜核武器和导弹项目的机密信息。中方对此有何评论？\
-                      答：我们注意到有关报道。当前朝鲜半岛形势总体缓和，但这一局面仍较脆弱。希望有关各方多做有利于促进对话和互信、有利于维护半岛和本地区和平稳定大局的事，而不是相反。这符合有关各方的共同利益",
-                      @"呵呵",
-                      nil];
+//    
+//    NSArray *array = [NSArray arrayWithObjects:@"i简单；十几分i；骚减肥；熬倒计时v哦朋；撒酒疯静安寺；放假啊是【发技术总监jjdsfijadifoyoiwyoweoayr7yohkfjskf",
+//                      @"即将二分i傲娇",
+//                      @"lfijfjepafj",
+//                      @"ijd;oaf[I0[Q",
+//                      @"down vote lt for a given SDK or deployment target. For exa",
+//                      @"SEI放假哦啊见附件地方【安家费【ap9isfd[a9啊【死放大【啊大宋见附件地；v静安寺大劫案【哦几放大放假啊【非jsidfjasjidfpaisdfjwp8ruwqpfj",
+//                      @"dsfasdofoasfasdfdas",
+//                      @"【春兰杯古力屠龙胜韩国金志锡 中国提前夺冠】http://t.cn/RZzydsc 第十届春兰杯半决赛刚刚结束一场，不久前十番棋失利的古力以围棋中最为酣畅淋漓的屠龙方式击败韩国金志锡，中国包揽冠亚军。韩国二号棋手金志锡近期首夺三星杯以及进入LG杯决赛，期间击败中国多位年轻世界冠军，终于倒在了古力面前。"
+//                      @""
+//                      @"i建瓯就打算激动啥金佛就是IE剪发",
+//                      @"尼泊尔和孟加拉国都是中国传统友好邻邦。明年是中尼建交60周年，也是中孟建交40周年。中方期待通过此访推动落实中尼、中孟两国领导人重要共识，规划明年建交纪念活动，拓展双方在经贸、互联互通、人文等领域合作，推进中尼、中孟关系进一步发展。问美韩日三方将签订一项防卫情报备忘录，共享有关朝鲜核武器和导弹项目的机密信息。中方对此有何评论？\
+//                      答：我们注意到有关报道。当前朝鲜半岛形势总体缓和，但这一局面仍较脆弱。希望有关各方多做有利于促进对话和互信、有利于维护半岛和本地区和平稳定大局的事，而不是相反。这符合有关各方的共同利益",
+//                      @"呵呵",
+//                      nil];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *date = [dateFormatter stringFromDate:[NSDate date]];
     
-    for (int i = 0; i < 10; i++) {
-        PlanModel *model = [[PlanModel alloc] init];
-        model.image = nil;
-        model.time = date;
-        model.detail = array[i];
-        
-        [self.modelArr addObject:model];
-    }
+//    for (int i = 0; i < 10; i++) {
+//        PlanModel *model = [[PlanModel alloc] init];
+//        model.image = nil;
+//        model.time = date;
+//        model.detail = array[i];
+//        
+//        [self.modelArr addObject:model];
+//    }
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ActivityPlanCell" bundle:nil] forCellReuseIdentifier:Identifier];
+
+    [self setupRefresh];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getPlanList) name:Noti4 object:nil];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setupRefresh
+{
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:UserIdKey]) {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+        [SVProgressHUD showHUDWithImage:nil status:@"请登录" duration:TimeInterval];
+        return;
+    }
+    
+    [self.tableView addHeaderWithTarget:self action:@selector(getPlanList) dateKey:@"message"];
+    [self.tableView headerBeginRefreshing];
+    self.tableView.headerPullToRefreshText = @"下拉刷新";
+    self.tableView.headerReleaseToRefreshText = @"松开刷新";
+    self.tableView.headerRefreshingText = @"刷新中，请稍候";
+}
+
+- (void)getPlanList
+{
+    [self.modelArr removeAllObjects];
+    
+    [HTTPManager getActivityListWithUserId:nil completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD dismiss];
+            
+            NSArray *arr = jsonObject[@"data"];
+            [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                [self.dataArr addObject:(NSDictionary *)obj];
+                
+                NSDictionary *dic = (NSDictionary *)obj;
+                PlanModel *model = [[PlanModel alloc] init];
+                model.image = nil;
+                model.time = dic[@"activityTime"];
+                model.detail = dic[@"activityContent"];
+                model.ID = dic[@"id"];
+                
+                [self.modelArr addObject:model];
+            }];
+            [self.tableView reloadData];
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+        
+        [self.tableView  headerEndRefreshing];
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+        
+        [self.tableView  headerEndRefreshing];
+    }];
+}
+
+- (void)deletePlan:(NSNumber *)ID
+{
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager deleteActivityWithUserId:nil activityId:ID completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD dismiss];
+            
+            [self getPlanList];
+            
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+        
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+    }];
 }
 
 - (void)onBtnAdd:(id)sender
@@ -88,7 +181,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ActivityPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
-    
+
     PlanModel *model = self.modelArr[indexPath.row];
     [cell setModel:model tableView:tableView];
 
@@ -117,9 +210,19 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.modelArr removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        [self.modelArr removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+//        NSDictionary *dic = self.dataArr[indexPath.row];
+        PlanModel *model = self.modelArr[indexPath.row];
+        [self deletePlan:model.ID];
     }
+    
+//    if (editingStyle ==UITableViewCellEditingStyleDelete) {
+//        NSMutableArray *sectionArr = _dataDictionary[_indexArr[indexPath.section]];
+//        NSDictionary *dic = sectionArr[indexPath.row];
+//        [self deleteClient:dic[@"id"]];
+//    }
 }
 
 

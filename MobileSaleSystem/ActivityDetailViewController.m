@@ -81,7 +81,7 @@
     if (!self.datePicker) {
         self.datePicker = [[YYDatePicker alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, DatePickerDefaultHeight) shadowContainerView:self.navigationController.view];
         self.datePicker.delegate = self;
-//        self.datePicker.date = [_dateFormatter dateFromString:DefaultDate];
+        self.datePicker.minimumDate = [NSDate date];
         [self.view addSubview:self.datePicker];
     }
     
@@ -96,6 +96,13 @@
         return;
     }
 
+//    NSString *dateString = [date substringFromIndex:5];
+//    [self.dateFormatter setDateFormat:@"HH:mm"];
+//    NSString *timeString = [self.dateFormatter stringFromDate:[NSDate date]];
+//    self.dateLbl.text = [NSString stringWithFormat:@"%@ %@", dateString, timeString];
+//    [self.dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    self.dateLbl.text = date;
     
     NSLog(@"date: %@", date);
 }
@@ -108,7 +115,27 @@
 
 - (void)onBtnSave:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.view endEditing:YES];
+    
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager editActivityWithUserId:nil activityId:self.model.ID activityTime:self.dateLbl.text content:self.textView.text completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD dismiss];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:Noti4 object:nil];
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+    }];
 }
 
 /*

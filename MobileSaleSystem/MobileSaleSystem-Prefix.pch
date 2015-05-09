@@ -24,10 +24,25 @@
 #import "UIView+Utils.h"
 #import "UIView+Tools.h"
 #import "NSString+Tools.h"
+#import "UIImageView+AFNetworking.h"
+
 #define DatePickerDefaultHeight 216
 #define FONT(size) [UIFont systemFontOfSize:size]
 #endif
 
 #define TemporaryNotOpened @"暂未开通"
+
+#define TimeInterval 1.0
+
+#define Noti1 @"Noti1"
+#define Noti2 @"Noti2"
+#define Noti3 @"Noti3"
+#define Noti4 @"Noti4"
+#define Noti5 @"Noti5"
+
+#define NotiAvatar @"NotiAvatar"
+
+#define NotiLogin @"NotiLogin"
+#define NotiLoginLayout @"NotiLoginLayout"
 
 #endif

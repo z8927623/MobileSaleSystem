@@ -33,6 +33,15 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
+    
+//    self.phoneField.delegate = self;
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.view endEditing:YES];
 }
 
 - (void)dealloc
@@ -49,8 +58,31 @@
 
 - (void)onBtnSave:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.view endEditing:YES];
+    
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager addClientInfoWithUserId:nil name:self.nameField.text age:self.ageField.text phone:self.phoneField.text sex:self.genderField.text address:self.addressField.text email:self.emailField.text completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD showHUDWithImage:nil status:@"成功" duration:TimeInterval];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:Noti1 object:nil];
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+    
+        } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+            NSLog(@"err: %@", error);
+        }];
 }
+
 
 - (IBAction)onBtnChooseImage:(id)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"用户相册", nil];
@@ -132,7 +164,17 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self keyboardWillChangeFrameNotification:nil];
+    NSInteger currentTag = textField.tag;
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[UITextField class]] && (view.tag - currentTag == 1)) {
+            UITextField *textField = (UITextField *)view;
+            [textField becomeFirstResponder];
+            break;
+        } else {
+            [textField resignFirstResponder];
+        }
+        
+    }
     return YES;
 }
 
@@ -191,6 +233,32 @@
     }
 }
 
+- (void)uploadAvatar:(NSString *)avatar ID:(NSNumber *)ID type:(int)type
+{
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager uploadAvatar:avatar ID:ID type:type completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD showHUDWithImage:nil status:@"成功" duration:TimeInterval];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:Noti1 object:nil];
+            
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+    }];
+
+}
+
 
 #pragma mark - UIImagePickerController delegate methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -200,7 +268,8 @@
     self.chosenImage = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:^{
-        //        [self uploadAvatar];
+
+        self.avatarImage.image = chosenImage;
     }];
 }
 

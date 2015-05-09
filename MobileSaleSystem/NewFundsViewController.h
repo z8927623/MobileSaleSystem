@@ -10,4 +10,8 @@
 
 @interface NewFundsViewController : CommonViewController
 
+@property (nonatomic, strong) UITextField *field1;
+
+@property (nonatomic, strong) UITextField *field2;
+
 @end

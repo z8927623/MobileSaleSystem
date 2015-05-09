@@ -12,5 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *field1;
 @property (weak, nonatomic) IBOutlet UITextField *field2;
+@property (weak, nonatomic) IBOutlet UIButton *salerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *managerBtn;
+
+- (IBAction)onBtnSaler:(id)sender;
+- (IBAction)onBtnManager:(id)sender;
 
 @end

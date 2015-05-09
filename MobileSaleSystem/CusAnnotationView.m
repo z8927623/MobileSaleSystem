@@ -39,10 +39,13 @@
     CLLocationCoordinate2D coorinate = [self.annotation coordinate];
     
     NSLog(@"coordinate = {%f, %f}", coorinate.latitude, coorinate.longitude);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectAnnotationCalloutViewDelegate:source:)]) {
+        [self.delegate didSelectAnnotationCalloutViewDelegate:self.calloutText source:self];
+    }
 }
 
 #pragma mark - Override
-
 
 - (UIImage *)portrait
 {
@@ -61,28 +64,22 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    if (self.selected == selected)
-    {
+    if (self.selected == selected) {
         return;
     }
     
-    if (selected)
-    {
-        if (self.calloutView == nil)
-        {
+    if (selected) {
+        if (self.calloutView == nil) {
             /* Construct custom callout. */
             self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, kCalloutWidth, kCalloutHeight)];
             self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
                                                   -CGRectGetHeight(self.calloutView.bounds) / 2.f + self.calloutOffset.y);
             
-//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//            btn.frame = CGRectMake(10, 10, 40, 40);
-//            [btn setTitle:@"Test" forState:UIControlStateNormal];
-//            [btn setBackgroundColor:[UIColor whiteColor]];
-//            [btn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-//            [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            [self.calloutView addSubview:btn];
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            btn.frame = self.calloutView.bounds;
+            [btn setBackgroundColor:[UIColor clearColor]];
+            [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
+            [self.calloutView addSubview:btn];
             
             UILabel *name = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 30)];
             name.backgroundColor = [UIColor clearColor];
@@ -90,7 +87,10 @@
             name.textAlignment = NSTextAlignmentCenter;
             name.font = FONT(9);
             name.text = self.calloutText;
+//            name.width = [self.calloutText sizeWithFont:FONT(9) constrainedToSize:CGSizeMake(CGFLOAT_MAX, 30)].width+10;
             [self.calloutView addSubview:name];
+            
+            self.calloutView.width = name.width+10;
            
         }
         

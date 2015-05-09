@@ -9,6 +9,11 @@
 #import "CommonViewController.h"
 
 @interface EditMyInfoViewController : CommonViewController
+
+@property (nonatomic, strong) NSMutableDictionary *dic;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarIv;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -16,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *ageField;
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 - (IBAction)onBtnAvatar:(id)sender;
-@property (weak, nonatomic) IBOutlet UIImageView *avatarIv;
+
+
 
 @end

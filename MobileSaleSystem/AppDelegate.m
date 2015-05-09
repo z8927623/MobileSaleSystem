@@ -43,8 +43,11 @@
     [UIApplication sharedApplication].idleTimerDisabled = TRUE;
     
     _locationmanager = [[CLLocationManager alloc] init];
-    [_locationmanager requestAlwaysAuthorization];        //NSLocationAlwaysUsageDescription
-    [_locationmanager requestWhenInUseAuthorization];     //NSLocationWhenInUseDescription
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] > 8.0) {
+        [_locationmanager requestAlwaysAuthorization];        // NSLocationAlwaysUsageDescription
+        [_locationmanager requestWhenInUseAuthorization];     // NSLocationWhenInUseDescription
+    }
+   
     _locationmanager.delegate = self;
 #else
     
@@ -60,6 +63,8 @@
 //    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"navigation-bar-back-icon"]];
 //    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"navigation-bar-back-icon"]];
 //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
     
     [self configureAPIKey];
     [self fixMAMapLocationOnIOS8];

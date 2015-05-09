@@ -18,7 +18,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *ageField;
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
 
+@property (nonatomic, strong) NSMutableDictionary *dic;
+
 - (IBAction)onBtnChooseImage:(id)sender;
 - (IBAction)tapAction:(id)sender;
+
+@property (nonatomic, assign) BOOL forManager;
 
 @end

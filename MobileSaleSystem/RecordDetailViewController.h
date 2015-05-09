@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) NSString *text;
 
+@property (nonatomic, strong) NSMutableDictionary *dic;
+
 @end

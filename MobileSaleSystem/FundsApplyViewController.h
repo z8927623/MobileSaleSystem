@@ -10,4 +10,8 @@
 
 @interface FundsApplyViewController : CommonViewController
 
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, assign) BOOL forManager;
+
 @end

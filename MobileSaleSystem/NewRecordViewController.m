@@ -36,7 +36,30 @@
 - (void)complete
 {
     [self.view endEditing:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager addRecordWithUserId:nil content:self.textView.text completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD showHUDWithImage:nil status:@"成功" duration:TimeInterval];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:Noti5 object:nil];
+
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+        
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+    }];
+
 }
 
 - (void)onBtnCancel

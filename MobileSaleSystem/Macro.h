@@ -11,6 +11,10 @@
 
 #define UserKey @"UserKey"
 #define PwdKey @"PwdKey"
+#define UserIdKey @"UserIdKey"
+#define UserNameKey @"UserNameKey"
+
+#define ManagerIdKey @"ManagerIdKey"
 
 #define UsersArrKey @"UsersArrKey"
 

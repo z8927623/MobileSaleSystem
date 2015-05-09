@@ -30,12 +30,45 @@
     self.textView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     [self.view addSubview:self.textView];
     
-    self.textView.text = self.text;
+    self.textView.text = self.dic[@"note"];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismiss)];
+    [self.view addGestureRecognizer:tap];
 }
+
+
+- (void)dismiss
+{
+    [self.view endEditing:YES];
+}
+
 
 - (void)complete
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.view endEditing:YES];
+    
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager editRecordWithUserId:nil noteId:self.dic[@"id"] content:self.textView.text completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD dismiss];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:Noti5 object:nil];
+            
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+    }];
 }
 
 

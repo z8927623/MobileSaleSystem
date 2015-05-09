@@ -12,6 +12,8 @@
 
 @interface SignInManageViewController ()
 
+@property (nonatomic, strong) NSMutableArray *dataArr;
+
 @end
 
 @implementation SignInManageViewController
@@ -38,14 +40,124 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onBtnAdd:)];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    self.dataArr = [NSMutableArray array];
+    
+    if (!self.forManager) {
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onBtnAdd:)];
+        self.navigationItem.rightBarButtonItem = rightItem;
+    }
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    
+    [self setupRefresh];
+    
+    if (!self.forManager) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSignInList) name:Noti3 object:nil];
+    } else {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getAllSignInInfo) name:Noti3 object:nil];
+    }
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] < 8.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)getAllSignInInfo
+{
+    [self.dataArr removeAllObjects];
+    
+    [HTTPManager getAllSignInListWithCompletionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD dismiss];
+            
+            NSArray *arr = jsonObject[@"data"];
+            [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [self.dataArr addObject:(NSDictionary *)obj];
+            }];
+            
+            [self.tableView reloadData];
+            
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+        
+        [self.tableView  headerEndRefreshing];
+        
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+        
+        [self.tableView  headerEndRefreshing];
+    }];
+}
+
+
+- (void)setupRefresh
+{
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:UserIdKey]) {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+        [SVProgressHUD showHUDWithImage:nil status:@"请登录" duration:TimeInterval];
+        return;
+    }
+    
+    if (!self.forManager) {
+        [self.tableView addHeaderWithTarget:self action:@selector(getSignInList) dateKey:@"message"];
+    } else {
+        [self.tableView addHeaderWithTarget:self action:@selector(getAllSignInInfo) dateKey:@"message"];
+    }
+ 
+    [self.tableView headerBeginRefreshing];
+    self.tableView.headerPullToRefreshText = @"下拉刷新";
+    self.tableView.headerReleaseToRefreshText = @"松开刷新";
+    self.tableView.headerRefreshingText = @"刷新中，请稍候";
+}
+
+- (void)getSignInList
+{
+    [self.dataArr removeAllObjects];
+    
+    [HTTPManager getSignInListWithUserId:nil completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD dismiss];
+            
+            NSArray *arr = jsonObject[@"data"];
+            [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [self.dataArr addObject:(NSDictionary *)obj];
+            }];
+            
+            [self.tableView reloadData];
+            
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+        
+        [self.tableView  headerEndRefreshing];
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+        
+        [self.tableView  headerEndRefreshing];
+    }];
+}
+
 
 - (void)onBtnAdd:(id)sender
 {
@@ -57,7 +169,7 @@
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,7 +179,9 @@
         cell = [[SignInCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
     }
     
-    [cell setName:@"ehhe" time:@"2015-01-01" address:@"浙江理工大学"];
+    NSDictionary *dic = self.dataArr[indexPath.row];
+    [cell setName:@"😄" time:dic[@"signTime"] address:dic[@"signPlace"]];
+    
     return cell;
 }
 

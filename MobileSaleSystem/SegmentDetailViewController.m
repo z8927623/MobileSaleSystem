@@ -146,7 +146,7 @@
 {
     [super viewDidLoad];
     
-    [self initTitle:@"公交换乘路段 (AMapSegment)"];
+    [self initTitle:@"公交换乘路段"];
     
     [self initTableView];
 }

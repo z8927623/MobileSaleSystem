@@ -14,4 +14,8 @@
 
 @property (nonatomic, strong) NSMutableArray *clientArr;
 
+@property (nonatomic, assign) BOOL forManager;
+
+//@property (nonatomic, strong) NSMutableArray *clientInfoArr;
+
 @end

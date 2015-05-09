@@ -162,7 +162,7 @@
 {
     [super viewDidLoad];
     
-    [self initTitle:@"公交站 (AMapBusStop)"];
+    [self initTitle:@"公交站"];
     
     [self initTableView];
 }

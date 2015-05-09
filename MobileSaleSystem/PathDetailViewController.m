@@ -174,7 +174,7 @@
 {
     [super viewDidLoad];
     
-    [self initTitle:@"步行/驾车方案 (AMapPath)"];
+    [self initTitle:@"步行/驾车方案"];
     
     [self initTableView];
 }

@@ -10,6 +10,7 @@
 
 @interface PlanModel : NSObject
 
+@property (nonatomic, strong) NSNumber *ID;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *time;
 @property (nonatomic, strong) NSString *detail;

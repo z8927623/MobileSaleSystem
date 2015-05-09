@@ -188,7 +188,7 @@
 {
     [super viewDidLoad];
     
-    [self initTitle:@"导航路段 (AMapStep)"];
+    [self initTitle:@"导航路段"];
     
     [self initTableView];
 }

@@ -250,7 +250,7 @@
 {
     [super viewDidLoad];
 	
-    [self initTitle:@"公交线路 (AMapBusLine)"];
+    [self initTitle:@"公交线路"];
     
     [self initTableView];
 }

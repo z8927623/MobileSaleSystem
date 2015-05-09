@@ -8,6 +8,10 @@
 
 #import "AFHTTPClient.h"
 
+//#define Base_Url @"http://192.168.1.113:8080/crm/"
+
+#define Base_Url @"http://112.124.43.74/crm/"
+
 @interface HTTPClient : AFHTTPClient
 
 + (HTTPClient *)sharedClient;

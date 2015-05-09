@@ -154,7 +154,7 @@
 {
     [super viewDidLoad];
     
-    [self initTitle:@"步行导航信息 (AMapWalking)"];
+    [self initTitle:@"步行导航信息"];
     
     [self initTableView];
 }

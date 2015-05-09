@@ -35,7 +35,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    self.navigationItem.title = @"修改计划";
+    self.navigationItem.title = @"添加新计划";
     
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 74, self.view.frame.size.width-20, 180)];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -69,7 +69,7 @@
     if (!self.datePicker) {
         self.datePicker = [[YYDatePicker alloc] initWithFrame:CGRectMake(0, self.view.height, self.view.width, DatePickerDefaultHeight) shadowContainerView:self.navigationController.view];
         self.datePicker.delegate = self;
-        //        self.datePicker.date = [_dateFormatter dateFromString:DefaultDate];
+        self.datePicker.minimumDate = [NSDate date];
         [self.view addSubview:self.datePicker];
     }
     
@@ -84,6 +84,7 @@
         return;
     }
     
+    self.dateLbl.text = date;
     
     NSLog(@"date: %@", date);
 }
@@ -92,12 +93,36 @@
 - (void)dismiss
 {
     [self.view endEditing:YES];
+
 }
 
 - (void)onBtnSave:(id)sender
 {
     [self.view endEditing:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [SVProgressHUD showProgress];
+    
+    [HTTPManager addActivityWithUserId:nil date:self.dateLbl.text content:self.textView.text completionBlock:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"jsonDic: %@\n%@", jsonObject, jsonString);
+        NSString *result_code = [NSString stringWithFormat:@"%@", jsonObject[@"code"]];
+        
+        if ([result_code isEqualToString:@"0"]) {
+            [SVProgressHUD showHUDWithImage:nil status:@"成功" duration:TimeInterval];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:Noti4 object:nil];
+        } else {
+            [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        }
+        
+    } failureBlock:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showHUDWithImage:nil status:@"失败" duration:TimeInterval];
+        NSLog(@"err: %@", error);
+    }];
+
 }
 
 @end
