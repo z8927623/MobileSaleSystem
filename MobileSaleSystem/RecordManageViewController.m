@@ -11,7 +11,7 @@
 @interface RecordManageViewController ()
 
 @end
-
+// 
 @implementation RecordManageViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
